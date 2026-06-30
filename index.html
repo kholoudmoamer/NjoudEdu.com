@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Njoud EDU | منصة نجود التعليمية</title>
+    <style>
+        :root {
+            --primary: #0B2545; /* الكحلي الداكن الرسمي للمنصة */
+            --accent: #EEA48F;  /* الوردي/البيج الناعم للهوية */
+            --bg-light: #FDFBF7; /* خلفية كريمية مريحة للعين */
+            --text-dark: #1E293B;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; text-align: center; }
+        
+        /* الهيدر أو البانر العلوي */
+        header { background-color: var(--primary); color: white; padding: 50px 20px; border-bottom: 5px solid var(--accent); position: relative; }
+        .logo-box { width: 130px; height: 130px; background: white; border-radius: 50%; margin: 0 auto 15px; padding: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); overflow: hidden; }
+        .logo-box img { width: 100%; height: 100%; object-fit: cover; }
+        header h1 { font-size: 36px; font-weight: 800; letter-spacing: 1px; color: white; }
+        header .slogan { font-size: 20px; color: var(--accent); margin-top: 5px; font-weight: 600; }
+        header .subjects { font-size: 15px; margin-top: 15px; opacity: 0.8; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        header .subjects span { background: rgba(255,255,255,0.1); padding: 3px 12px; border-radius: 20px; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        
+        /* الكروت والأقسام */
+        .card { background: white; padding: 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(11, 37, 69, 0.05); margin-bottom: 30px; border: 1px solid rgba(238, 164, 143, 0.2); }
+        h2 { color: var(--primary); margin-bottom: 20px; font-size: 26px; font-weight: 700; position: relative; display: inline-block; padding-bottom: 5px; }
+        h2::after { content: ''; width: 50%; height: 3px; background: var(--accent); position: absolute; bottom: 0; right: 25%; border-radius: 2px; }
+        
+        .intro-text { font-size: 18px; color: #4A5568; max-width: 800px; margin: 0 auto 25px; text-align: center; font-weight: 500; }
+
+        /* شبكة المميزات */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 25px; }
+        .grid-item { background: #F8FAFC; padding: 20px; border-radius: 15px; font-weight: 600; color: var(--primary); border-right: 4px solid var(--accent); text-align: right; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+
+        /* جدول الأسعار وباقات الحصص */
+        .table-responsive { overflow-x: auto; margin-top: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; background: white; text-align: center; min-width: 600px; }
+        th { background-color: var(--primary); color: white; padding: 15px; font-size: 16px; }
+        td { padding: 15px; border-bottom: 1px solid #E2E8F0; font-size: 16px; font-weight: 500; }
+        tr:nth-child(even) { background-color: #F8FAFC; }
+        tr.highlight { background-color: rgba(238, 164, 143, 0.15); font-weight: bold; }
+        .tag-popular { background: var(--primary); color: white; padding: 2px 8px; border-radius: 5px; font-size: 12px; margin-right: 5px; vertical-align: middle; }
+        .validity-note { font-size: 14px; color: #718096; margin-top: 15px; font-weight: 600; }
+
+        /* ركائز التعليم */
+        .pillars { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px; }
+        .pillar-tag { background: white; border: 1px solid var(--primary); color: var(--primary); padding: 8px 20px; border-radius: 30px; font-weight: 600; font-size: 15px; }
+
+        /* زرار الاتصال الكبير الثابت والدعوة للتفاعل */
+        .cta-box { background: linear-gradient(135deg, var(--primary), #1A365D); color: white; padding: 40px 20px; border-radius: 24px; box-shadow: 0 10px 25px rgba(11, 37, 69, 0.2); margin-top: 40px; }
+        .cta-box h3 { font-size: 24px; margin-bottom: 10px; color: var(--accent); }
+        .cta-box p { font-size: 18px; opacity: 0.9; margin-bottom: 25px; }
+        
+        .whatsapp-btn { display: inline-flex; align-items: center; justify-content: center; background-color: #25D366; color: white; text-decoration: none; padding: 16px 38px; font-size: 22px; font-weight: bold; border-radius: 50px; box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .whatsapp-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.5); }
+        .whatsapp-icon { font-size: 26px; margin-left: 10px; }
+
+        footer { background: var(--primary); color: white; padding: 30px 20px; margin-top: 60px; border-top: 4px solid var(--accent); font-size: 15px; }
+        footer p { opacity: 0.8; }
+        footer .brand { font-weight: bold; color: var(--accent); margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <!-- البانر العلوي للمنصة -->
+    <header>
+        <div class="logo-box">
+            <!-- ضعي هنا رابط ملف الـ Logo.png بعد رفعه، حالياً يظهر حرف N تعبيري -->
+            <img src="https://via.placeholder.com/130/0B2545/ffffff?text=N" alt="Njoud EDU Logo">
+        </div>
+        <h1>Njoud EDU</h1>
+        <div class="slogan">تعلم بذكاء.. تميز بثقة</div>
+        <div class="subjects">
+            <span>الرياضيات (Math)</span>
+            <span>العلوم (Science)</span>
+            <span>الفيزياء (Physics)</span>
+            <span>البرمجة (Coding)</span>
+            <span>STEM</span>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- قسم من نحن والمميزات -->
+        <div class="card">
+            <h2>عن منصة نجود</h2>
+            <p class="intro-text">منصة تعليمية متخصصة لتقديم دروس خصوصية أونلاين بجودة عالية بنظام تفاعلي حديث يناسب جميع المستويات.</p>
+            
+            <div class="grid">
+                <div class="grid-item">💡 فهم عميق بأسلوب مبسط</div>
+                <div class="grid-item">📊 متابعة شخصية وتقارير دورية</div>
+                <div class="grid-item">🛠️ دروس تفاعلية وأدوات حديثة</div>
+                <div class="grid-item">🎯 بناء ثقة وتحقيق الأهداف</div>
+                <div class="grid-item">👩‍🏫 فريق تعليمي متخصص ومعلمات متميزات</div>
+            </div>
+        </div>
+
+        <!-- قسم باقات الحصص والأسعار -->
+        <div class="card">
+            <h2>باقات الحصص</h2>
+            <p class="intro-text">اختر الباقة المناسبة لاحتياجك المناهج الدراسي</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اسم الباقة</th>
+                            <th>السعر الإجمالي</th>
+                            <th>سعر الساعة</th>
+                            <th>قيمة التوفير</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight">
+                            <td>باقة 24 حصة <span class="tag-popular">الأكثر طلباً</span></td>
+                            <td>720 ريال</td>
+                            <td>30 ريال / ساعة</td>
+                            <td>وفر 120 ريال</td>
+                        </tr>
+                        <tr>
+                            <td>باقة 16 حصة</td>
+                            <td>500 ريال</td>
+                            <td>31.25 ريال / ساعة</td>
+                            <td>وفر 60 ريال</td>
+                        </tr>
+                        <tr>
+                            <td>باقة 12 حصة</td>
+                            <td>380 ريال</td>
+                            <td>31.67 ريال / ساعة</td>
+                            <td>وفر 40 ريال</td>
+                        </tr>
+                        <tr>
+                            <td>باقة 8 حصص</td>
+                            <td>260 ريال</td>
+                            <td>32.50 ريال / ساعة</td>
+                            <td>وفر 20 ريال</td>
+                        </tr>
+                        <tr>
+                            <td>باقة 4 حصص</td>
+                            <td>135 ريال</td>
+                            <td>33.75 ريال / ساعة</td>
+                            <td>وفر 5 ريال</td>
+                        </tr>
+                        <tr>
+                            <td>حصة واحدة تجريبية</td>
+                            <td>35 ريال</td>
+                            <td>35 ريال / ساعة</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="validity-note">🕒 صلاحية جميع الباقات: 8 أسابيع من تاريخ أول حصة.</p>
+        </div>
+
+        <!-- قسم ماذا ستحصل عليه وركائز التعليم -->
+        <div class="card">
+            <h2>ما الذي ستحصل عليه معنا؟</h2>
+            <div class="grid" style="margin-bottom: 30px;">
+                <div class="grid-item" style="border-right-color: var(--primary);">📈 نتائج ملموسة وتطور مستمر</div>
+                <div class="grid-item" style="border-right-color: var(--primary);">🔒 بيئة آمنة ومريحة للتعلم</div>
+                <div class="grid-item" style="border-right-color: var(--primary);">📝 خطط تعليمية مخصصة لكل طالب</div>
+                <div class="grid-item" style="border-right-color: var(--primary);">💻 دروس أونلاين تفاعلية مباشرة</div>
+            </div>
+
+            <h2 style="font-size: 22px; margin-top: 15px;">ركائز التعليم بالمنصة</h2>
+            <div class="pillars">
+                <div class="pillar-tag">🧠 التركيز على الفهم لا الحفظ فقط</div>
+                <div class="pillar-tag">🚀 تقنيات تفاعلية حديثة</div>
+                <div class="pillar-tag">✏️ شرح مبسط يناسب كل المستويات</div>
+            </div>
+        </div>
+
+        <!-- قسم الحجز والاتصال (الدعوة لإجراء) -->
+        <div class="cta-box">
+            <h3>ابدأ رحلتك مع نجود اليوم</h3>
+            <p>مع نجود.. نفهم.. ندعم.. نتطور حتى نحقق أهدافك التعليمية</p>
+            
+            <!-- ضعي رقم واتساب المنصة الفعلي هنا مكان 201XXXXXXXXX بالصيغة الدولية -->
+            <a href="https://wa.me/201XXXXXXXXX?text=مرحباً%20منصة%20نجود،%20أود%20الاستفسار%20عن%20تفاصيل%20الحجز%20واختيار%20الباقة%20المناسبة" target="_blank" class="whatsapp-btn">
+                <span class="whatsapp-icon">🟢</span> احجز أولى حصصك الآن عبر واتساب
+            </a>
+        </div>
+
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 | <a href="http://NjoudEdu.com" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: bold;">NjoudEdu.com</a></p>
+        <div class="brand">نجود.. حيث يصنع التميز ✨</div>
+    </footer>
+
+</body>
+</html>
