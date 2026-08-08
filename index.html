@@ -2,4071 +2,594 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, viewport-fit=cover"
-    >
-
-    <!-- =========================================
-         SEO
-    ========================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Open Graph Meta Tags -->
     <title>منصة نجود التعليمية | Njoud EDU</title>
-
-    <meta
-        name="description"
-        content="منصة نجود التعليمية لتقديم دروس خصوصية أونلاين في الرياضيات والعلوم والفيزياء والبرمجة وSTEM لمناهج دول الخليج."
-    >
-
-    <meta
-        name="keywords"
-        content="دروس خصوصية, رياضيات, علوم, فيزياء, برمجة, STEM, السعودية, الكويت, قطر, الإمارات, عمان"
-    >
-
-    <meta name="theme-color" content="#0B2545">
-
-    <!-- Open Graph -->
+    <meta name="description" content="منصة نجود التعليمية لتقديم دروس خصوصية أونلاين بجودة عالية في الرياضيات والعلوم والفيزياء والبرمجة وSTEM لدول الخليج.">
+    <meta name="keywords" content="دروس خصوصية, رياضيات, علوم, فيزياء, برمجة, STEM, السعودية, الكويت, قطر, الإمارات, عمان">
     <meta property="og:title" content="منصة نجود التعليمية | Njoud EDU">
-
-    <meta
-        property="og:description"
-        content="تعلم بذكاء .. تميز بثقة. دروس أونلاين تفاعلية لمناهج دول الخليج."
-    >
-
+    <meta property="og:description" content="تعلم بذكاء .. تميز بثقة. دروس أونلاين تفاعلية لمناهج دول الخليج.">
     <meta property="og:url" content="https://njoudedu.com">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="logo.png">
 
-    <!-- Favicon -->
-    <link rel="icon" href="logo.png" type="image/png">
-
-    <!-- =========================================
-         Fonts
-    ========================================== -->
+    <!-- Fonts: Cairo & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    >
-
-    <!-- Country Flag Emoji Polyfill -->
+    <!-- Twemoji Country Flags Support -->
     <style>
         @font-face {
-            font-family: "Twemoji Country Flags";
-            src: url("https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1.8/dist/TwemojiCountryFlags.woff2")
-                format("woff2");
+            font-family: 'Twemoji Country Flags';
+            src: url('https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1.8/dist/TwemojiCountryFlags.woff2') format('woff2');
             font-display: swap;
         }
     </style>
 
     <style>
-
-        /* =========================================
-           Root
-        ========================================== */
-
         :root {
             --primary: #0B2545;
             --primary-dark: #071930;
-            --primary-light: #153E69;
-
             --accent: #EEA48F;
-            --accent-hover: #E0917A;
-            --accent-soft: rgba(238, 164, 143, 0.13);
-
-            --background: #FAF8F5;
-            --surface: #FFFFFF;
-            --surface-alt: #F3F6F9;
-
-            --text: #1E293B;
+            --accent-hover: #e0917a;
+            --bg-light: #FAF8F5;
+            --card-bg: #FFFFFF;
+            --text-dark: #1E293B;
             --text-muted: #64748B;
-
-            --border: #E2E8F0;
-
-            --success: #25D366;
-
-            --shadow-sm:
-                0 4px 14px rgba(11, 37, 69, 0.06);
-
-            --shadow-md:
-                0 12px 30px rgba(11, 37, 69, 0.10);
-
-            --shadow-lg:
-                0 20px 50px rgba(11, 37, 69, 0.16);
-
-            --radius-sm: 12px;
-            --radius-md: 18px;
-            --radius-lg: 24px;
-
-            --transition:
-                0.28s cubic-bezier(0.4, 0, 0.2, 1);
-
-            --container: 1180px;
-            --navbar-height: 78px;
+            --shadow-sm: 0 4px 12px rgba(11, 37, 69, 0.05);
+            --shadow-md: 0 10px 25px rgba(11, 37, 69, 0.08);
+            --shadow-lg: 0 15px 35px rgba(11, 37, 69, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Twemoji Country Flags', 'Cairo', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
 
-        /* =========================================
-           Reset
-        ========================================== */
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
+        /* CSS Logo Design */
+        .logo-badge {
+            background: var(--primary);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 95px;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-
-            font-family: "Cairo", sans-serif;
-
-            background: var(--background);
-            color: var(--text);
-
-            line-height: 1.75;
-
-            overflow-x: hidden;
-        }
-
-        body.menu-open {
-            overflow: hidden;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        p {
-            margin-top: 0;
-        }
-
-        img {
-            display: block;
-            max-width: 100%;
-        }
-
-        button,
-        input,
-        textarea,
-        select {
-            font: inherit;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        button:focus-visible,
-        a:focus-visible {
-            outline: 3px solid var(--accent);
-            outline-offset: 3px;
-        }
-
-
-        /* =========================================
-           Helpers
-        ========================================== */
-
-        .container {
-            width: min(
-                calc(100% - 40px),
-                var(--container)
-            );
-
-            margin-inline: auto;
-        }
-
-        .flag {
-            font-family:
-                "Twemoji Country Flags",
-                "Apple Color Emoji",
-                "Segoe UI Emoji",
-                sans-serif;
-        }
-
-        .desktop-only {
-            display: inline-flex;
-        }
-
-
-        /* =========================================
-           Navbar
-        ========================================== */
-
+        /* Navbar ثابت */
         .navbar {
             position: fixed;
-
-            top: 0;
-            left: 0;
-            right: 0;
-
-            z-index: 1000;
-
-            min-height: var(--navbar-height);
-
-            background:
-                rgba(11, 37, 69, 0.96);
-
-            border-bottom:
-                1px solid rgba(238, 164, 143, 0.28);
-
-            box-shadow:
-                0 6px 25px rgba(0, 0, 0, 0.12);
-
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
-
-        .navbar-inner {
-            width: min(
-                calc(100% - 40px),
-                1280px
-            );
-
-            min-height: var(--navbar-height);
-
-            margin-inline: auto;
-
+            top: 0; left: 0; right: 0;
+            background: rgba(11, 37, 69, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 5%;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-
-            gap: 24px;
-        }
-
-
-        /* Brand */
-
-        .nav-brand {
-            display: flex;
             align-items: center;
-
-            gap: 10px;
-
-            text-decoration: none;
-
-            flex-shrink: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+            border-bottom: 2px solid rgba(238, 164, 143, 0.3);
         }
 
-        .nav-logo {
-            width: 52px;
-            height: 52px;
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav-logo .logo-badge { width: 46px; height: 46px; font-size: 22px; }
+        .nav-logo span { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 0.5px; }
 
-            padding: 4px;
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; font-size: 15px; transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent); }
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #FFFFFF;
-
-            border:
-                2px solid rgba(238, 164, 143, 0.9);
-
-            border-radius: 15px;
-
-            box-shadow:
-                0 5px 16px rgba(0, 0, 0, 0.17);
-
-            overflow: hidden;
-        }
-
-        .nav-logo img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-        }
-
-        .nav-letter {
-            width: 29px;
-            height: 29px;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 8px;
-
+        .nav-btn {
             background: var(--accent);
-            color: var(--primary-dark);
-
-            font-size: 15px;
-            font-weight: 900;
-
-            box-shadow:
-                0 3px 9px rgba(0, 0, 0, 0.14);
-        }
-
-        .nav-brand-text {
-            display: flex;
-            flex-direction: column;
-
-            line-height: 1.2;
-        }
-
-        .nav-brand-name {
-            color: #FFFFFF;
-
-            font-size: 20px;
-            font-weight: 900;
-
-            letter-spacing: 0.2px;
-        }
-
-        .nav-brand-subtitle {
-            color: rgba(255, 255, 255, 0.60);
-
-            margin-top: 3px;
-
-            font-size: 10px;
-            font-weight: 600;
-        }
-
-
-        /* Navigation links */
-
-        .nav-links {
-            margin: 0;
-            padding: 0;
-
-            list-style: none;
-
-            display: flex;
-            align-items: center;
-
-            gap: clamp(12px, 1.8vw, 26px);
-        }
-
-        .nav-links a {
-            position: relative;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            min-height: 42px;
-
-            color:
-                rgba(255, 255, 255, 0.86);
-
-            text-decoration: none;
-
-            font-size: 14px;
-            font-weight: 700;
-
-            white-space: nowrap;
-
-            transition:
-                color var(--transition),
-                background var(--transition),
-                transform var(--transition);
-        }
-
-        .nav-links a:not(.nav-cta)::after {
-            content: "";
-
-            position: absolute;
-
-            right: 50%;
-            left: 50%;
-            bottom: 3px;
-
-            height: 2px;
-
-            background: var(--accent);
-
-            border-radius: 20px;
-
-            transition: var(--transition);
-        }
-
-        .nav-links a:not(.nav-cta):hover {
-            color: var(--accent);
-        }
-
-        .nav-links a:not(.nav-cta):hover::after {
-            right: 0;
-            left: 0;
-        }
-
-        .nav-cta {
-            gap: 7px;
-
-            padding: 7px 18px;
-
             color: var(--primary-dark) !important;
-
-            background: var(--accent);
-
-            border-radius: 999px;
-
-            box-shadow:
-                0 6px 18px rgba(238, 164, 143, 0.28);
-        }
-
-        .nav-cta:hover {
-            background: #FFFFFF;
-
-            transform: translateY(-2px);
-        }
-
-
-        /* Mobile button */
-
-        .mobile-menu-button {
-            width: 46px;
-            height: 46px;
-
-            padding: 0;
-
-            display: none;
-            align-items: center;
-            justify-content: center;
-
-            border:
-                1px solid rgba(255, 255, 255, 0.15);
-
-            border-radius: 13px;
-
-            background:
-                rgba(255, 255, 255, 0.08);
-
-            color: #FFFFFF;
-
-            font-size: 20px;
-
-            cursor: pointer;
-
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700 !important;
             transition: var(--transition);
         }
+        .nav-btn:hover { background: #fff; transform: translateY(-2px); }
 
-        .mobile-menu-button:hover {
-            color: var(--accent);
-
-            background:
-                rgba(255, 255, 255, 0.13);
-        }
-
-
-        /* =========================================
-           Hero
-        ========================================== */
-
+        /* Hero Section */
         .hero {
             position: relative;
-
-            min-height: 720px;
-
-            padding:
-                calc(var(--navbar-height) + 90px)
-                20px
-                120px;
-
-            display: flex;
-            align-items: center;
-
-            color: #FFFFFF;
-
+            padding: 160px 5% 100px;
+            background: linear-gradient(135deg, rgba(7, 25, 48, 0.92) 0%, rgba(11, 37, 69, 0.88) 100%), 
+                        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: white;
             text-align: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(7, 25, 48, 0.95),
-                    rgba(11, 37, 69, 0.87)
-                ),
-                url(
-                    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=85"
-                )
-                center / cover
-                no-repeat;
-
             overflow: hidden;
         }
 
-        .hero::before,
-        .hero::after {
-            content: "";
-
-            position: absolute;
-
-            border-radius: 50%;
-
-            pointer-events: none;
+        .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+        .hero-avatar { 
+            width: 120px; 
+            height: 120px; 
+            font-size: 60px; 
+            border-width: 4px; 
+            margin: 0 auto 20px; 
+            box-shadow: var(--shadow-lg); 
+            animation: pulse 3s infinite; 
         }
+        
+        .hero h1 { font-size: 46px; font-weight: 900; margin-bottom: 15px; line-height: 1.2; }
+        .hero .slogan { font-size: 24px; color: var(--accent); font-weight: 700; margin-bottom: 20px; }
+        .hero p { font-size: 18px; opacity: 0.9; max-width: 750px; margin: 0 auto 35px; font-weight: 400; }
 
-        .hero::before {
-            width: 480px;
-            height: 480px;
+        .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-primary { background: var(--accent); color: var(--primary-dark); padding: 14px 35px; border-radius: 50px; font-weight: 800; font-size: 18px; text-decoration: none; transition: var(--transition); box-shadow: 0 5px 20px rgba(238, 164, 143, 0.4); }
+        .btn-primary:hover { background: #fff; transform: translateY(-3px); }
 
-            top: -220px;
-            right: -170px;
+        .btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1.5px solid var(--accent); padding: 14px 35px; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: var(--transition); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
 
-            background:
-                rgba(238, 164, 143, 0.10);
-
-            filter: blur(4px);
-        }
-
-        .hero::after {
-            width: 390px;
-            height: 390px;
-
-            bottom: -200px;
-            left: -150px;
-
-            background:
-                rgba(255, 255, 255, 0.05);
-        }
-
-        .hero-content {
+        /* Stats Counter Section */
+        .stats-section {
+            background: #fff;
+            padding: 40px 5%;
+            margin-top: -40px;
             position: relative;
-            z-index: 2;
-
-            width: min(100%, 920px);
-
-            margin-inline: auto;
+            z-index: 10;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
         }
 
-        .hero-logo {
-            width: 145px;
-            height: 145px;
+        .stat-item h3 { font-size: 38px; color: var(--primary); font-weight: 800; }
+        .stat-item p { font-size: 15px; color: var(--text-muted); font-weight: 600; }
 
-            margin:
-                0 auto 25px;
+        /* Sections General */
+        section { padding: 80px 5%; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 34px; color: var(--primary); font-weight: 800; position: relative; display: inline-block; padding-bottom: 10px; }
+        .section-header h2::after { content: ''; width: 50%; height: 4px; background: var(--accent); position: absolute; bottom: 0; right: 25%; border-radius: 2px; }
+        .section-header p { color: var(--text-muted); font-size: 17px; margin-top: 10px; }
 
-            padding: 8px;
+        /* الأقسام والمواد */
+        .subjects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .subject-card {
+            background: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(238, 164, 143, 0.2);
+            transition: var(--transition);
+        }
+        .subject-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .subject-card i { font-size: 40px; color: var(--primary); margin-bottom: 15px; }
+        .subject-card h3 { font-size: 20px; color: var(--primary); font-weight: 700; }
 
+        /* المناهج ودول الخليج */
+        .gulf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+        .gulf-card {
+            background: var(--card-bg);
+            padding: 25px 15px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #E2E8F0;
+            transition: var(--transition);
+        }
+        .gulf-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+        .gulf-card .flag { font-size: 45px; margin-bottom: 10px; line-height: 1; display: inline-block; }
+        .gulf-card h3 { font-size: 18px; color: var(--primary); font-weight: 700; }
+        .gulf-card p { font-size: 13px; color: var(--text-muted); margin-top: 5px; }
+
+        /* جداول الأسعار للباقات */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
+        .price-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px 18px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #E2E8F0;
+            transition: var(--transition);
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .price-header { background: var(--primary); color: white; padding: 12px; border-radius: 14px; text-align: center; margin-bottom: 15px; }
+        .price-header h3 { font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .price-header .currency { font-size: 12px; color: var(--accent); }
+        .price-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+        .price-table th, .price-table td { padding: 8px 4px; font-size: 14px; border: 1px solid #F1F5F9; text-align: center; }
+        .price-table th { background: #F8FAFC; color: var(--primary); font-weight: 700; }
+        .price-note { background: rgba(238, 164, 143, 0.15); color: var(--primary); padding: 8px; border-radius: 10px; font-size: 13px; font-weight: 700; text-align: center; }
+
+        /* لماذا نجود */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .feature-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: var(--shadow-sm);
+            border-right: 5px solid var(--accent);
+            display: flex; gap: 15px; align-items: flex-start;
+        }
+        .feature-item i { font-size: 26px; color: var(--primary); margin-top: 3px; }
+        .feature-item h4 { font-size: 18px; color: var(--primary); font-weight: 700; margin-bottom: 5px; }
+        .feature-item p { font-size: 14px; color: var(--text-muted); }
+
+        /* FAQ */
+        .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        .faq-item { background: var(--card-bg); border-radius: 14px; padding: 20px; box-shadow: var(--shadow-sm); border: 1px solid #E2E8F0; cursor: pointer; transition: var(--transition); }
+        .faq-question { font-size: 17px; font-weight: 700; color: var(--primary); display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { margin-top: 10px; font-size: 15px; color: var(--text-muted); display: none; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--accent); }
+
+        /* Footer & Social Media Icons */
+        footer { background: var(--primary-dark); color: white; padding: 50px 5% 20px; border-top: 4px solid var(--accent); text-align: center; }
+        .footer-logo { font-size: 26px; font-weight: 800; color: white; margin-bottom: 10px; }
+        .footer-slogan { color: var(--accent); font-weight: 600; margin-bottom: 25px; }
+        
+        .social-links {
             display: flex;
-            align-items: center;
             justify-content: center;
-
-            background:
-                rgba(255, 255, 255, 0.98);
-
-            border:
-                4px solid var(--accent);
-
-            border-radius: 30px;
-
-            box-shadow:
-                0 18px 45px rgba(0, 0, 0, 0.28);
-
-            overflow: hidden;
-
-            animation:
-                logoFloat 4s ease-in-out infinite;
-        }
-
-        .hero-logo img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-        }
-
-        .hero-badge {
-            width: fit-content;
-
-            margin:
-                0 auto 18px;
-
-            padding:
-                7px 16px;
-
-            display: flex;
-            align-items: center;
-
-            gap: 8px;
-
-            background:
-                rgba(255, 255, 255, 0.08);
-
-            border:
-                1px solid rgba(255, 255, 255, 0.15);
-
-            border-radius: 999px;
-
-            color:
-                rgba(255, 255, 255, 0.90);
-
-            font-size: 13px;
-            font-weight: 700;
-
-            backdrop-filter: blur(8px);
-        }
-
-        .hero-badge span:first-child {
-            width: 25px;
-            height: 25px;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            background: var(--accent);
-            color: var(--primary-dark);
-
-            border-radius: 7px;
-
-            font-weight: 900;
-        }
-
-        .hero h1 {
-            margin-bottom: 10px;
-
-            color: #FFFFFF;
-
-            font-size:
-                clamp(34px, 5vw, 56px);
-
-            font-weight: 900;
-
-            line-height: 1.25;
-        }
-
-        .hero-slogan {
-            margin-bottom: 18px;
-
-            color: var(--accent);
-
-            font-size:
-                clamp(19px, 2.3vw, 26px);
-
-            font-weight: 800;
-        }
-
-        .hero-description {
-            max-width: 770px;
-
-            margin:
-                0 auto 34px;
-
-            color:
-                rgba(255, 255, 255, 0.87);
-
-            font-size:
-                clamp(15px, 1.6vw, 18px);
-
-            line-height: 1.9;
-        }
-
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 14px;
-
+            gap: 15px;
+            margin: 25px 0;
             flex-wrap: wrap;
         }
-
-        .button {
-            min-height: 54px;
-
-            padding:
-                12px 28px;
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 9px;
-
-            border-radius: 999px;
-
-            text-decoration: none;
-
-            font-size: 16px;
-            font-weight: 800;
-
-            transition:
-                var(--transition);
-        }
-
-        .button-primary {
-            color: var(--primary-dark);
-
-            background: var(--accent);
-
-            box-shadow:
-                0 8px 25px rgba(238, 164, 143, 0.30);
-        }
-
-        .button-primary:hover {
-            background: #FFFFFF;
-
-            transform:
-                translateY(-3px);
-        }
-
-        .button-secondary {
-            color: #FFFFFF;
-
-            background:
-                rgba(255, 255, 255, 0.08);
-
-            border:
-                1px solid rgba(238, 164, 143, 0.80);
-        }
-
-        .button-secondary:hover {
-            background:
-                rgba(255, 255, 255, 0.15);
-
-            transform:
-                translateY(-3px);
-        }
-
-
-        /* =========================================
-           Stats
-        ========================================== */
-
-        .stats-wrapper {
-            position: relative;
-            z-index: 20;
-
-            margin-top: -62px;
-        }
-
-        .stats {
-            width: min(
-                calc(100% - 40px),
-                1000px
-            );
-
-            margin-inline: auto;
-
-            padding:
-                34px 30px;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            background: var(--surface);
-
-            border:
-                1px solid rgba(226, 232, 240, 0.8);
-
-            border-radius: 24px;
-
-            box-shadow: var(--shadow-lg);
-        }
-
-        .stat {
-            padding:
-                4px 20px;
-
-            text-align: center;
-        }
-
-        .stat + .stat {
-            border-right:
-                1px solid var(--border);
-        }
-
-        .stat-number {
-            margin-bottom: 4px;
-
-            color: var(--primary);
-
-            font-size:
-                clamp(30px, 4vw, 40px);
-
-            font-weight: 900;
-
-            line-height: 1.2;
-        }
-
-        .stat-label {
-            margin: 0;
-
-            color: var(--text-muted);
-
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-
-        /* =========================================
-           Sections
-        ========================================== */
-
-        section {
-            padding:
-                90px 0;
-        }
-
-        .section-alt {
-            background:
-                var(--surface-alt);
-        }
-
-        .section-heading {
-            max-width: 760px;
-
-            margin:
-                0 auto 48px;
-
-            text-align: center;
-        }
-
-        .section-kicker {
-            display: inline-flex;
-
-            margin-bottom: 9px;
-
-            color:
-                var(--accent-hover);
-
-            font-size: 13px;
-            font-weight: 900;
-
-            letter-spacing: 0.5px;
-        }
-
-        .section-heading h2 {
-            position: relative;
-
-            margin-bottom: 12px;
-            padding-bottom: 14px;
-
-            color: var(--primary);
-
-            font-size:
-                clamp(27px, 3.5vw, 37px);
-
-            font-weight: 900;
-
-            line-height: 1.4;
-        }
-
-        .section-heading h2::after {
-            content: "";
-
-            position: absolute;
-
-            right: 50%;
-            bottom: 0;
-
-            width: 58px;
-            height: 4px;
-
-            background: var(--accent);
-
-            border-radius: 999px;
-
-            transform:
-                translateX(50%);
-        }
-
-        .section-heading p {
-            margin: 0;
-
-            color: var(--text-muted);
-
-            font-size: 16px;
-
-            line-height: 1.9;
-        }
-
-
-        /* =========================================
-           Subjects
-        ========================================== */
-
-        .subjects-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(5, minmax(0, 1fr));
-
-            gap: 18px;
-        }
-
-        .subject-card {
-            position: relative;
-
-            min-height: 190px;
-
-            padding:
-                30px 18px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            background: var(--surface);
-
-            border:
-                1px solid rgba(238, 164, 143, 0.25);
-
-            border-radius: 21px;
-
-            box-shadow: var(--shadow-sm);
-
-            text-align: center;
-
-            overflow: hidden;
-
-            transition:
-                transform var(--transition),
-                box-shadow var(--transition),
-                border-color var(--transition);
-        }
-
-        .subject-card::before {
-            content: "";
-
-            position: absolute;
-
-            top: -30px;
-            left: -30px;
-
-            width: 90px;
-            height: 90px;
-
-            background: var(--accent-soft);
-
+        .social-btn {
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-        }
-
-        .subject-card:hover {
-            transform:
-                translateY(-7px);
-
-            border-color: var(--accent);
-
-            box-shadow: var(--shadow-md);
-        }
-
-        .subject-icon {
-            width: 62px;
-            height: 62px;
-
-            margin-bottom: 14px;
-
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            background:
-                rgba(11, 37, 69, 0.06);
-
-            border-radius: 18px;
-
-            color: var(--primary);
-
-            font-size: 28px;
-        }
-
-        .subject-card h3 {
-            margin: 0;
-
-            color: var(--primary);
-
-            font-size: 17px;
-            font-weight: 800;
-
-            line-height: 1.6;
-        }
-
-
-        /* =========================================
-           Countries
-        ========================================== */
-
-        .gulf-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(5, minmax(0, 1fr));
-
-            gap: 18px;
-        }
-
-        .gulf-card {
-            min-height: 180px;
-
-            padding:
-                26px 16px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            background: var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 20px;
-
-            box-shadow: var(--shadow-sm);
-
-            text-align: center;
-
-            transition: var(--transition);
-        }
-
-        .gulf-card:hover {
-            transform:
-                translateY(-6px);
-
-            border-color: var(--accent);
-
-            box-shadow: var(--shadow-md);
-        }
-
-        .gulf-card .flag {
-            margin-bottom: 10px;
-
-            font-size: 45px;
-
-            line-height: 1;
-        }
-
-        .gulf-card h3 {
-            margin-bottom: 3px;
-
-            color: var(--primary);
-
-            font-size: 17px;
-            font-weight: 800;
-        }
-
-        .gulf-card p {
-            margin: 0;
-
-            color: var(--text-muted);
-
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-
-        /* =========================================
-           Pricing
-        ========================================== */
-
-        .pricing-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(5, minmax(0, 1fr));
-
-            gap: 18px;
-        }
-
-        .price-card {
-            min-width: 0;
-
-            padding:
-                17px;
-
-            display: flex;
-            flex-direction: column;
-
-            background: var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 22px;
-
-            box-shadow: var(--shadow-sm);
-
-            transition: var(--transition);
-        }
-
-        .price-card:hover {
-            transform:
-                translateY(-7px);
-
-            border-color: var(--accent);
-
-            box-shadow: var(--shadow-lg);
-        }
-
-        .price-header {
-            margin-bottom: 14px;
-
-            padding:
-                15px 10px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--primary-dark)
-                );
-
-            border-radius: 15px;
-
-            color: #FFFFFF;
-
-            text-align: center;
-        }
-
-        .price-header h3 {
-            margin:
-                0 0 2px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 7px;
-
-            font-size: 16px;
-            font-weight: 800;
-        }
-
-        .price-header .flag {
             font-size: 20px;
-        }
-
-        .price-currency {
-            color:
-                rgba(238, 164, 143, 0.95);
-
-            font-size: 11px;
-            font-weight: 700;
-        }
-
-        .price-table-wrapper {
-            width: 100%;
-
-            overflow-x: auto;
-        }
-
-        .price-table {
-            width: 100%;
-
-            margin-bottom: 13px;
-
-            border-collapse: separate;
-            border-spacing: 0;
-
-            table-layout: fixed;
-
-            overflow: hidden;
-        }
-
-        .price-table th,
-        .price-table td {
-            padding:
-                8px 4px;
-
-            border-right:
-                1px solid #EEF2F6;
-
-            border-bottom:
-                1px solid #EEF2F6;
-
-            text-align: center;
-
-            font-size: 12px;
-        }
-
-        .price-table th:first-child,
-        .price-table td:first-child {
-            border-left:
-                1px solid #EEF2F6;
-        }
-
-        .price-table thead tr:first-child th {
-            border-top:
-                1px solid #EEF2F6;
-        }
-
-        .price-table th {
-            background: #F8FAFC;
-
-            color: var(--primary);
-
-            font-weight: 800;
-        }
-
-        .price-table td {
-            color: var(--text);
-            font-weight: 700;
-        }
-
-        .price-note {
-            margin-top: auto;
-
-            padding:
-                9px 7px;
-
-            background: var(--accent-soft);
-
-            border:
-                1px solid rgba(238, 164, 143, 0.22);
-
-            border-radius: 11px;
-
-            color: var(--primary);
-
-            text-align: center;
-
-            font-size: 11px;
-            font-weight: 800;
-        }
-
-
-        /* =========================================
-           Features
-        ========================================== */
-
-        .features-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 20px;
-        }
-
-        .feature-card {
-            padding:
-                25px;
-
-            display: flex;
-            align-items: flex-start;
-
-            gap: 17px;
-
-            background: var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-right:
-                5px solid var(--accent);
-
-            border-radius: 19px;
-
-            box-shadow: var(--shadow-sm);
-
+            text-decoration: none;
+            border: 1px solid rgba(238, 164, 143, 0.3);
             transition: var(--transition);
         }
-
-        .feature-card:hover {
-            transform:
-                translateY(-4px);
-
-            box-shadow: var(--shadow-md);
-        }
-
-        .feature-icon {
-            width: 52px;
-            height: 52px;
-
-            flex: 0 0 52px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background:
-                rgba(11, 37, 69, 0.07);
-
-            border-radius: 15px;
-
-            color: var(--primary);
-
-            font-size: 22px;
-        }
-
-        .feature-card h3 {
-            margin:
-                0 0 5px;
-
-            color: var(--primary);
-
-            font-size: 17px;
-            font-weight: 800;
-        }
-
-        .feature-card p {
-            margin: 0;
-
-            color: var(--text-muted);
-
-            font-size: 13px;
-        }
-
-
-        /* =========================================
-           FAQ
-        ========================================== */
-
-        .faq-list {
-            width: min(100%, 820px);
-
-            margin-inline: auto;
-
-            display: flex;
-            flex-direction: column;
-
-            gap: 13px;
-        }
-
-        .faq-item {
-            background: var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 16px;
-
-            box-shadow: var(--shadow-sm);
-
-            overflow: hidden;
-
+        .social-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
             transition: var(--transition);
         }
-
-        .faq-item:hover {
-            border-color:
-                rgba(238, 164, 143, 0.65);
+        .social-btn:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(238, 164, 143, 0.4);
         }
 
-        .faq-question {
-            width: 100%;
+        .footer-rights { opacity: 0.75; font-size: 14px; margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
 
-            padding:
-                19px 20px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 20px;
-
-            border: 0;
-
-            background: transparent;
-
-            color: var(--primary);
-
-            text-align: right;
-
-            font-size: 15px;
-            font-weight: 800;
-
-            cursor: pointer;
-        }
-
-        .faq-question i {
-            color: var(--text-muted);
-
-            transition:
-                transform var(--transition),
-                color var(--transition);
-        }
-
-        .faq-answer {
-            display: grid;
-
-            grid-template-rows: 0fr;
-
-            transition:
-                grid-template-rows var(--transition);
-        }
-
-        .faq-answer-inner {
-            overflow: hidden;
-        }
-
-        .faq-answer p {
-            margin:
-                0;
-
-            padding:
-                0 20px 0;
-
-            color: var(--text-muted);
-
-            font-size: 14px;
-
-            transition:
-                padding var(--transition);
-        }
-
-        .faq-item.active .faq-answer {
-            grid-template-rows: 1fr;
-        }
-
-        .faq-item.active .faq-answer p {
-            padding:
-                0 20px 19px;
-        }
-
-        .faq-item.active .faq-question i {
-            color: var(--accent-hover);
-
-            transform:
-                rotate(180deg);
-        }
-
-
-        /* =========================================
-           CTA
-        ========================================== */
-
-        .cta-section {
-            padding:
-                0 0 90px;
-        }
-
-        .cta-box {
-            position: relative;
-
-            padding:
-                45px 40px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 30px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary-dark),
-                    var(--primary)
-                );
-
-            border:
-                1px solid rgba(238, 164, 143, 0.28);
-
-            border-radius: 28px;
-
-            box-shadow: var(--shadow-lg);
-
-            color: #FFFFFF;
-
-            overflow: hidden;
-        }
-
-        .cta-box::after {
-            content: "N";
-
-            position: absolute;
-
-            left: 24px;
-            bottom: -85px;
-
-            color:
-                rgba(255, 255, 255, 0.04);
-
-            font-size: 230px;
-            font-weight: 900;
-
-            line-height: 1;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-
-            max-width: 650px;
-        }
-
-        .cta-content h2 {
-            margin-bottom: 8px;
-
-            font-size:
-                clamp(25px, 3.5vw, 36px);
-
-            font-weight: 900;
-        }
-
-        .cta-content p {
-            margin: 0;
-
-            color:
-                rgba(255, 255, 255, 0.76);
-
-            font-size: 14px;
-        }
-
-        .cta-action {
-            position: relative;
-            z-index: 2;
-
-            flex-shrink: 0;
-        }
-
-
-        /* =========================================
-           Footer
-        ========================================== */
-
-        footer {
-            padding:
-                52px 20px 20px;
-
-            background: var(--primary-dark);
-
-            border-top:
-                4px solid var(--accent);
-
-            color: #FFFFFF;
-
-            text-align: center;
-        }
-
-        .footer-logo {
-            width: 78px;
-            height: 78px;
-
-            margin:
-                0 auto 13px;
-
-            padding: 5px;
-
-            background: #FFFFFF;
-
-            border:
-                2px solid var(--accent);
-
-            border-radius: 20px;
-
-            overflow: hidden;
-        }
-
-        .footer-logo img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-        }
-
-        .footer-brand {
-            margin-bottom: 3px;
-
-            font-size: 24px;
-            font-weight: 900;
-        }
-
-        .footer-slogan {
-            margin:
-                0 0 26px;
-
-            color: var(--accent);
-
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .footer-rights {
-            margin: 0;
-
-            padding-top: 20px;
-
-            border-top:
-                1px solid rgba(255, 255, 255, 0.10);
-
-            color:
-                rgba(255, 255, 255, 0.58);
-
-            font-size: 12px;
-        }
-
-
-        /* =========================================
-           Floating Buttons
-        ========================================== */
-
+        /* عناصر ثابتة */
         .whatsapp-float {
             position: fixed;
-
-            left: 24px;
-            bottom: 24px;
-
-            z-index: 900;
-
-            width: 60px;
-            height: 60px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: var(--success);
-
+            bottom: 25px; left: 25px;
+            background: #25D366; color: white;
+            width: 60px; height: 60px;
             border-radius: 50%;
-
-            box-shadow:
-                0 8px 25px rgba(37, 211, 102, 0.35);
-
-            color: #FFFFFF;
-
-            text-decoration: none;
-
-            font-size: 31px;
-
+            display: flex; justify-content: center; align-items: center;
+            font-size: 32px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
             transition: var(--transition);
+            text-decoration: none;
         }
-
-        .whatsapp-float:hover {
-            transform:
-                translateY(-4px) scale(1.04);
-        }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
         .back-to-top {
             position: fixed;
-
-            right: 24px;
-            bottom: 24px;
-
-            z-index: 900;
-
-            width: 46px;
-            height: 46px;
-
-            padding: 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border: 0;
+            bottom: 25px; right: 25px;
+            background: var(--primary); color: white;
+            width: 45px; height: 45px;
             border-radius: 50%;
-
-            background: var(--primary);
-
+            display: flex; justify-content: center; align-items: center;
+            font-size: 18px;
             box-shadow: var(--shadow-md);
-
-            color: #FFFFFF;
-
-            font-size: 16px;
-
-            cursor: pointer;
-
-            opacity: 0;
-            visibility: hidden;
-
-            transform:
-                translateY(10px);
-
+            z-index: 999;
+            opacity: 0; pointer-events: none;
             transition: var(--transition);
+            cursor: pointer;
         }
+        .back-to-top.show { opacity: 1; pointer-events: auto; }
 
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+        /* Animations */
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-            transform:
-                translateY(0);
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 32px; }
+            .hero .slogan { font-size: 18px; }
+            .stats-section { grid-template-columns: repeat(2, 1fr); margin-top: -20px; }
+            .btn-primary, .btn-secondary { width: 100%; text-align: center; }
         }
-
-        .back-to-top:hover {
-            background: var(--accent);
-
-            color: var(--primary-dark);
-        }
-
-
-        /* =========================================
-           Reveal
-        ========================================== */
-
-        .reveal {
-            opacity: 0;
-
-            transform:
-                translateY(26px);
-
-            transition:
-                opacity 0.75s ease,
-                transform 0.75s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-
-            transform:
-                translateY(0);
-        }
-
-
-        /* =========================================
-           Animations
-        ========================================== */
-
-        @keyframes logoFloat {
-
-            0%,
-            100% {
-                transform:
-                    translateY(0);
-            }
-
-            50% {
-                transform:
-                    translateY(-7px);
-            }
-        }
-
-
-        /* =========================================
-           Tablet
-        ========================================== */
-
-        @media (max-width: 1100px) {
-
-            .subjects-grid,
-            .gulf-grid {
-                grid-template-columns:
-                    repeat(3, minmax(0, 1fr));
-            }
-
-            .pricing-grid {
-                grid-template-columns:
-                    repeat(3, minmax(0, 1fr));
-            }
-
-            .nav-links {
-                gap: 13px;
-            }
-
-            .nav-links a {
-                font-size: 12px;
-            }
-
-            .nav-brand-name {
-                font-size: 18px;
-            }
-        }
-
-
-        /* =========================================
-           Mobile navigation
-        ========================================== */
-
-        @media (max-width: 900px) {
-
-            :root {
-                --navbar-height: 70px;
-            }
-
-            .navbar-inner {
-                width:
-                    calc(100% - 28px);
-            }
-
-            .mobile-menu-button {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-
-                top:
-                    calc(var(--navbar-height) + 10px);
-
-                right: 14px;
-                left: 14px;
-
-                max-height:
-                    calc(100vh - var(--navbar-height) - 28px);
-
-                padding: 13px;
-
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-
-                gap: 4px;
-
-                background:
-                    rgba(7, 25, 48, 0.99);
-
-                border:
-                    1px solid rgba(238, 164, 143, 0.24);
-
-                border-radius: 19px;
-
-                box-shadow:
-                    0 22px 60px rgba(0, 0, 0, 0.34);
-
-                overflow-y: auto;
-
-                opacity: 0;
-                visibility: hidden;
-
-                pointer-events: none;
-
-                transform:
-                    translateY(-12px);
-
-                transition: var(--transition);
-            }
-
-            .nav-links.open {
-                opacity: 1;
-                visibility: visible;
-
-                pointer-events: auto;
-
-                transform:
-                    translateY(0);
-            }
-
-            .nav-links li {
-                width: 100%;
-            }
-
-            .nav-links a {
-                width: 100%;
-
-                min-height: 48px;
-
-                padding:
-                    9px 13px;
-
-                justify-content: flex-start;
-
-                border-radius: 11px;
-
-                font-size: 14px;
-            }
-
-            .nav-links a:not(.nav-cta)::after {
-                display: none;
-            }
-
-            .nav-links a:not(.nav-cta):hover {
-                color: #FFFFFF;
-
-                background:
-                    rgba(255, 255, 255, 0.07);
-            }
-
-            .nav-cta {
-                margin-top: 4px;
-
-                justify-content: center !important;
-            }
-
-            .hero {
-                min-height: 650px;
-
-                padding:
-                    130px 20px 100px;
-            }
-
-            .stats {
-                width:
-                    calc(100% - 30px);
-            }
-
-            section {
-                padding:
-                    75px 0;
-            }
-
-            .subjects-grid,
-            .gulf-grid,
-            .pricing-grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
-
-            .cta-box {
-                align-items: flex-start;
-
-                flex-direction: column;
-            }
-        }
-
-
-        /* =========================================
-           Small Mobile
-        ========================================== */
-
-        @media (max-width: 600px) {
-
-            .container {
-                width:
-                    calc(100% - 30px);
-            }
-
-            .navbar-inner {
-                width:
-                    calc(100% - 24px);
-            }
-
-            .nav-logo {
-                width: 44px;
-                height: 44px;
-
-                border-radius: 12px;
-            }
-
-            .nav-letter {
-                width: 24px;
-                height: 24px;
-
-                font-size: 12px;
-            }
-
-            .nav-brand-name {
-                font-size: 15px;
-            }
-
-            .nav-brand-subtitle {
-                display: none;
-            }
-
-            .mobile-menu-button {
-                width: 43px;
-                height: 43px;
-            }
-
-
-            /* Hero */
-
-            .hero {
-                min-height: auto;
-
-                padding:
-                    112px 16px 80px;
-            }
-
-            .hero-logo {
-                width: 108px;
-                height: 108px;
-
-                margin-bottom: 18px;
-
-                padding: 6px;
-
-                border-width: 3px;
-                border-radius: 23px;
-            }
-
-            .hero-badge {
-                margin-bottom: 14px;
-
-                padding:
-                    6px 12px;
-
-                font-size: 11px;
-            }
-
-            .hero h1 {
-                font-size: 30px;
-            }
-
-            .hero-slogan {
-                font-size: 18px;
-            }
-
-            .hero-description {
-                margin-bottom: 27px;
-
-                font-size: 14px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-
-                width: 100%;
-            }
-
-            .button {
-                width: 100%;
-
-                min-height: 52px;
-
-                padding:
-                    11px 17px;
-
-                font-size: 14px;
-            }
-
-
-            /* Stats */
-
-            .stats-wrapper {
-                margin-top: -37px;
-            }
-
-            .stats {
-                width:
-                    calc(100% - 28px);
-
-                padding:
-                    10px 18px;
-
-                grid-template-columns: 1fr;
-
-                border-radius: 19px;
-            }
-
-            .stat {
-                padding:
-                    17px 7px;
-            }
-
-            .stat + .stat {
-                border-right: 0;
-
-                border-top:
-                    1px solid var(--border);
-            }
-
-            .stat-number {
-                font-size: 30px;
-            }
-
-            .stat-label {
-                font-size: 12px;
-            }
-
-
-            /* Sections */
-
-            section {
-                padding:
-                    58px 0;
-            }
-
-            .section-heading {
-                margin-bottom: 33px;
-            }
-
-            .section-heading h2 {
-                font-size: 25px;
-            }
-
-            .section-heading p {
-                font-size: 13px;
-            }
-
-            .subjects-grid,
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gulf-grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-
-                gap: 12px;
-            }
-
-            .subject-card {
-                min-height: 160px;
-
-                padding:
-                    24px 16px;
-            }
-
-            .gulf-card {
-                min-height: 155px;
-
-                padding:
-                    20px 10px;
-            }
-
-            .gulf-card .flag {
-                font-size: 37px;
-            }
-
-            .gulf-card h3 {
-                font-size: 14px;
-            }
-
-            .gulf-card p {
-                font-size: 10px;
-            }
-
-
-            /* Pricing */
-
-            .price-card {
-                padding: 16px;
-            }
-
-            .price-table th,
-            .price-table td {
-                font-size: 13px;
-
-                padding:
-                    9px 4px;
-            }
-
-
-            /* Features */
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .feature-card {
-                padding:
-                    20px 17px;
-
-                gap: 13px;
-            }
-
-            .feature-icon {
-                width: 46px;
-                height: 46px;
-
-                flex-basis: 46px;
-
-                font-size: 19px;
-            }
-
-
-            /* FAQ */
-
-            .faq-question {
-                padding:
-                    17px 15px;
-
-                font-size: 14px;
-            }
-
-            .faq-answer p {
-                font-size: 12px;
-            }
-
-            .faq-item.active .faq-answer p {
-                padding:
-                    0 15px 17px;
-            }
-
-
-            /* CTA */
-
-            .cta-section {
-                padding:
-                    0 0 58px;
-            }
-
-            .cta-box {
-                padding:
-                    30px 22px;
-
-                border-radius: 22px;
-            }
-
-            .cta-content h2 {
-                font-size: 24px;
-            }
-
-            .cta-content p {
-                font-size: 12px;
-            }
-
-            .cta-action {
-                width: 100%;
-            }
-
-
-            /* Footer */
-
-            footer {
-                padding:
-                    42px 16px 18px;
-            }
-
-            .footer-brand {
-                font-size: 21px;
-            }
-
-            .footer-slogan {
-                font-size: 12px;
-            }
-
-
-            /* Floating */
-
-            .whatsapp-float {
-                left: 14px;
-                bottom: 14px;
-
-                width: 54px;
-                height: 54px;
-
-                font-size: 27px;
-            }
-
-            .back-to-top {
-                right: 14px;
-                bottom: 14px;
-
-                width: 43px;
-                height: 43px;
-            }
-        }
-
-
-        /* =========================================
-           Very Small Phones
-        ========================================== */
-
-        @media (max-width: 380px) {
-
-            .nav-letter {
-                display: none;
-            }
-
-            .nav-brand-name {
-                font-size: 14px;
-            }
-
-            .gulf-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 27px;
-            }
-        }
-
-
-        /* =========================================
-           Reduced motion
-        ========================================== */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration:
-                    0.01ms !important;
-
-                animation-iteration-count:
-                    1 !important;
-
-                scroll-behavior:
-                    auto !important;
-
-                transition-duration:
-                    0.01ms !important;
-            }
-        }
-
     </style>
 </head>
-
-
 <body>
 
-
-    <!-- =========================================
-         Navbar
-    ========================================== -->
-
-    <nav
-        class="navbar"
-        aria-label="القائمة الرئيسية"
-    >
-        <div class="navbar-inner">
-
-            <a
-                href="#home"
-                class="nav-brand"
-                aria-label="Njoud EDU - الصفحة الرئيسية"
-            >
-
-                <span class="nav-logo">
-                    <img
-                        src="logo.png"
-                        alt="شعار منصة نجود التعليمية"
-                    >
-                </span>
-
-                <!-- N requested in header -->
-                <span
-                    class="nav-letter"
-                    aria-hidden="true"
-                >
-                    N
-                </span>
-
-                <span class="nav-brand-text">
-
-                    <span class="nav-brand-name">
-                        Njoud EDU
-                    </span>
-
-                    <span class="nav-brand-subtitle">
-                        منصة نجود التعليمية
-                    </span>
-
-                </span>
-
-            </a>
-
-
-            <button
-                class="mobile-menu-button"
-                id="mobileMenuButton"
-                type="button"
-                aria-label="فتح القائمة"
-                aria-controls="mainNavigation"
-                aria-expanded="false"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
-
-
-            <ul
-                class="nav-links"
-                id="mainNavigation"
-            >
-
-                <li>
-                    <a href="#subjects">
-                        المواد
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#curriculums">
-                        المناهج
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#pricing">
-                        الباقات
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#why-us">
-                        لماذا نجود
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#faq">
-                        الأسئلة الشائعة
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود،%20أود%20الاستفسار%20عن%20تفاصيل%20الحجز"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="nav-cta"
-                    >
-                        <i class="fab fa-whatsapp"></i>
-
-                        احجز الآن
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
+    <!-- Navbar ثابت -->
+    <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <div class="logo-badge">N</div>
+            <span>Njoud EDU</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#subjects">المواد</a></li>
+            <li><a href="#curriculums">المناهج</a></li>
+            <li><a href="#pricing">الباقات</a></li>
+            <li><a href="#why-us">لماذا نجود</a></li>
+            <li><a href="#faq">الأسئلة الشائعة</a></li>
+            <li><a href="https://wa.me/201039353583" target="_blank" class="nav-btn">احجز الآن</a></li>
+        </ul>
     </nav>
 
-
-
-    <!-- =========================================
-         Hero
-    ========================================== -->
-
-    <header
-        class="hero"
-        id="home"
-    >
-
+    <!-- Hero Section -->
+    <header class="hero">
         <div class="hero-content">
-
-            <div class="hero-logo">
-
-                <img
-                    src="logo.png"
-                    alt="شعار Njoud EDU"
-                >
-
+            <div class="logo-badge hero-avatar">N</div>
+            <h1>منصة نجود التعليمية</h1>
+            <div class="slogan">تعلم بذكاء .. تميز بثقة</div>
+            <p>دروس خصوصية أونلاين تفاعلية فائقة الجودة في الرياضيات والعلوم والفيزياء والبرمجة وSTEM لمناهج دول الخليج.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود،%20أود%20الاستفسار%20عن%20تفاصيل%20الحجز" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> احجز أولى حصصك الآن</a>
+                <a href="#pricing" class="btn-secondary">استعرض الباقات</a>
             </div>
-
-
-            <div class="hero-badge">
-
-                <span>N</span>
-
-                <span>
-                    تعليم أونلاين لمناهج الخليج
-                </span>
-
-            </div>
-
-
-            <h1>
-                منصة نجود التعليمية
-            </h1>
-
-
-            <div class="hero-slogan">
-                تعلم بذكاء .. تميز بثقة
-            </div>
-
-
-            <p class="hero-description">
-
-                دروس خصوصية أونلاين تفاعلية عالية الجودة
-                في الرياضيات والعلوم والفيزياء والبرمجة
-                وSTEM، مع متابعة تعليمية تناسب مناهج
-                دول الخليج.
-
-            </p>
-
-
-            <div class="hero-actions">
-
-                <a
-                    href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود،%20أود%20الاستفسار%20عن%20تفاصيل%20الحجز"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="button button-primary"
-                >
-                    <i class="fab fa-whatsapp"></i>
-
-                    احجز أولى حصصك الآن
-                </a>
-
-
-                <a
-                    href="#pricing"
-                    class="button button-secondary"
-                >
-                    استعرض الباقات
-
-                    <i class="fas fa-arrow-down"></i>
-                </a>
-
-            </div>
-
         </div>
-
     </header>
 
-
-
-    <!-- =========================================
-         Stats
-    ========================================== -->
-
-    <div class="stats-wrapper">
-
-        <div
-            class="stats reveal"
-            id="statsSection"
-        >
-
-            <div class="stat">
-
-                <div
-                    class="stat-number counter"
-                    data-target="100"
-                    data-suffix="%"
-                >
-                    0
-                </div>
-
-                <p class="stat-label">
-                    هدفنا الفهم والتميز
-                </p>
-
-            </div>
-
-
-            <div class="stat">
-
-                <div
-                    class="stat-number counter"
-                    data-target="5"
-                    data-suffix="+"
-                >
-                    0
-                </div>
-
-                <p class="stat-label">
-                    دول خليجية نخدمها
-                </p>
-
-            </div>
-
-
-            <div class="stat">
-
-                <div
-                    class="stat-number counter"
-                    data-target="8"
-                    data-suffix=""
-                >
-                    0
-                </div>
-
-                <p class="stat-label">
-                    أسابيع صلاحية الباقة
-                </p>
-
-            </div>
-
+    <!-- عداد الأرقام (Stats Counter) -->
+    <div class="stats-section reveal">
+        <div class="stat-item">
+            <h3 class="counter" data-target="100">0</h3>
+            <p>نسبة التميز والفهم</p>
         </div>
-
+        <div class="stat-item">
+            <h3 class="counter" data-target="5">0</h3>
+            <p>دول خليجية نخدمها</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="8">0</h3>
+            <p>أسابيع صلاحية الباقة</p>
+        </div>
     </div>
 
-
-
-    <!-- =========================================
-         Subjects
-    ========================================== -->
-
+    <!-- قسم المواد -->
     <section id="subjects">
-
         <div class="container reveal">
-
-            <div class="section-heading">
-
-                <span class="section-kicker">
-                    المواد التعليمية
-                </span>
-
-                <h2>
-                    المواد التي نغطيها
-                </h2>
-
-                <p>
-                    شرح مبسط وتأسيس قوي
-                    على أيدي معلمات متخصصات.
-                </p>
-
+            <div class="section-header">
+                <h2>المواد التي نغطيها</h2>
+                <p>شرح مبسط وتأسيس عميق على أيدي معلمات متخصصات</p>
             </div>
-
-
             <div class="subjects-grid">
-
-                <article class="subject-card">
-
-                    <div class="subject-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-
-                    <h3>
-                        الرياضيات
-                        <br>
-                        Math
-                    </h3>
-
-                </article>
-
-
-                <article class="subject-card">
-
-                    <div class="subject-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-
-                    <h3>
-                        العلوم
-                        <br>
-                        Science
-                    </h3>
-
-                </article>
-
-
-                <article class="subject-card">
-
-                    <div class="subject-icon">
-                        <i class="fas fa-atom"></i>
-                    </div>
-
-                    <h3>
-                        الفيزياء
-                        <br>
-                        Physics
-                    </h3>
-
-                </article>
-
-
-                <article class="subject-card">
-
-                    <div class="subject-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-
-                    <h3>
-                        البرمجة
-                        <br>
-                        Coding
-                    </h3>
-
-                </article>
-
-
-                <article class="subject-card">
-
-                    <div class="subject-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-
-                    <h3>
-                        STEM
-                    </h3>
-
-                </article>
-
+                <div class="subject-card"><i class="fas fa-calculator"></i><h3>الرياضيات (Math)</h3></div>
+                <div class="subject-card"><i class="fas fa-flask"></i><h3>العلوم (Science)</h3></div>
+                <div class="subject-card"><i class="fas fa-atom"></i><h3>الفيزياء (Physics)</h3></div>
+                <div class="subject-card"><i class="fas fa-code"></i><h3>البرمجة (Coding)</h3></div>
+                <div class="subject-card"><i class="fas fa-microscope"></i><h3>STEM</h3></div>
             </div>
-
         </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         Gulf Curriculums
-    ========================================== -->
-
-    <section
-        id="curriculums"
-        class="section-alt"
-    >
-
+    <!-- قسم المناهج والدول -->
+    <section id="curriculums" style="background: #F1F5F9;">
         <div class="container reveal">
-
-            <div class="section-heading">
-
-                <span class="section-kicker">
-                    المناهج
-                </span>
-
-                <h2>
-                    نخدم طلابنا في دول الخليج
-                </h2>
-
-                <p>
-                    محتوى تعليمي متوافق مع مناهج
-                    ومتطلبات كل دولة.
-                </p>
-
+            <div class="section-header">
+                <h2>نخدم طلابنا في دول الخليج</h2>
+                <p>مناهج معتمدة ومتوافقة تماماً مع معايير كل دولة</p>
             </div>
-
-
             <div class="gulf-grid">
-
-                <article class="gulf-card">
-
-                    <div class="flag">
-                        🇸🇦
-                    </div>
-
-                    <h3>
-                        السعودية
-                    </h3>
-
-                    <p>
-                        المناهج السعودية
-                    </p>
-
-                </article>
-
-
-                <article class="gulf-card">
-
-                    <div class="flag">
-                        🇰🇼
-                    </div>
-
-                    <h3>
-                        الكويت
-                    </h3>
-
-                    <p>
-                        المناهج الكويتية
-                    </p>
-
-                </article>
-
-
-                <article class="gulf-card">
-
-                    <div class="flag">
-                        🇴🇲
-                    </div>
-
-                    <h3>
-                        سلطنة عُمان
-                    </h3>
-
-                    <p>
-                        المناهج العمانية
-                    </p>
-
-                </article>
-
-
-                <article class="gulf-card">
-
-                    <div class="flag">
-                        🇦🇪
-                    </div>
-
-                    <h3>
-                        الإمارات
-                    </h3>
-
-                    <p>
-                        المناهج الإماراتية
-                    </p>
-
-                </article>
-
-
-                <article class="gulf-card">
-
-                    <div class="flag">
-                        🇶🇦
-                    </div>
-
-                    <h3>
-                        قطر
-                    </h3>
-
-                    <p>
-                        المناهج القطرية
-                    </p>
-
-                </article>
-
+                <div class="gulf-card"><div class="flag">🇸🇦</div><h3>السعودية</h3><p>المناهج السعودية</p></div>
+                <div class="gulf-card"><div class="flag">🇰🇼</div><h3>الكويت</h3><p>المناهج الكويتية</p></div>
+                <div class="gulf-card"><div class="flag">🇴🇲</div><h3>سلطنة عُمان</h3><p>المناهج العمانية</p></div>
+                <div class="gulf-card"><div class="flag">🇦🇪</div><h3>الإمارات</h3><p>المناهج الإماراتية</p></div>
+                <div class="gulf-card"><div class="flag">🇶🇦</div><h3>قطر</h3><p>المناهج القطرية</p></div>
             </div>
-
         </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         Pricing
-    ========================================== -->
-
+    <!-- قسم الباقات وجداول الأسعار -->
     <section id="pricing">
-
         <div class="container reveal">
-
-            <div class="section-heading">
-
-                <span class="section-kicker">
-                    الباقات
-                </span>
-
-                <h2>
-                    باقات الحصص الأونلاين
-                </h2>
-
-                <p>
-                    جميع الباقات تشمل 8 حصص.
-                    المجموعات بحد أقصى 3 طلاب
-                    مع إمكانية الحصص الفردية.
-                </p>
-
+            <div class="section-header">
+                <h2>باقات الحصص (أونلاين)</h2>
+                <p>جميع الباقات تشمل 8 حصص (مجموعات حد أقصى 3 طلاب أو فردية)</p>
             </div>
-
-
             <div class="pricing-grid">
-
-
-                <!-- Saudi Arabia -->
-
-                <article class="price-card">
-
-                    <div class="price-header">
-
-                        <h3>
-                            <span class="flag">
-                                🇸🇦
-                            </span>
-
-                            السعودية
-                        </h3>
-
-                        <div class="price-currency">
-                            ريال سعودي
-                        </div>
-
-                    </div>
-
-
-                    <div class="price-table-wrapper">
-
-                        <table class="price-table">
-
-                            <thead>
-
-                                <tr>
-                                    <th>مجموعة</th>
-                                    <th>فردية</th>
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <td>300</td>
-                                    <td>40</td>
-                                </tr>
-
-                                <tr>
-                                    <td>320</td>
-                                    <td>45</td>
-                                </tr>
-
-                                <tr>
-                                    <td>350</td>
-                                    <td>50</td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-
-                    <div class="price-note">
-                        تبدأ الفردية من 40 ريال
-                    </div>
-
-                </article>
-
-
-
-                <!-- Kuwait -->
-
-                <article class="price-card">
-
-                    <div class="price-header">
-
-                        <h3>
-                            <span class="flag">
-                                🇰🇼
-                            </span>
-
-                            الكويت
-                        </h3>
-
-                        <div class="price-currency">
-                            دينار كويتي
-                        </div>
-
-                    </div>
-
-
-                    <div class="price-table-wrapper">
-
-                        <table class="price-table">
-
-                            <thead>
-
-                                <tr>
-                                    <th>مجموعة</th>
-                                    <th>فردية</th>
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <td>30</td>
-                                    <td>4</td>
-                                </tr>
-
-                                <tr>
-                                    <td>32</td>
-                                    <td>4.5</td>
-                                </tr>
-
-                                <tr>
-                                    <td>35</td>
-                                    <td>5</td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-
-                    <div class="price-note">
-                        تبدأ الفردية من 4 دنانير
-                    </div>
-
-                </article>
-
-
-
-                <!-- Oman -->
-
-                <article class="price-card">
-
-                    <div class="price-header">
-
-                        <h3>
-                            <span class="flag">
-                                🇴🇲
-                            </span>
-
-                            سلطنة عُمان
-                        </h3>
-
-                        <div class="price-currency">
-                            ريال عماني
-                        </div>
-
-                    </div>
-
-
-                    <div class="price-table-wrapper">
-
-                        <table class="price-table">
-
-                            <thead>
-
-                                <tr>
-                                    <th>مجموعة</th>
-                                    <th>فردية</th>
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <td>45</td>
-                                    <td>4.5</td>
-                                </tr>
-
-                                <tr>
-                                    <td>50</td>
-                                    <td>5</td>
-                                </tr>
-
-                                <tr>
-                                    <td>55</td>
-                                    <td>5.5</td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-
-                    <div class="price-note">
-                        تبدأ الفردية من 4.5 ريال
-                    </div>
-
-                </article>
-
-
-
-                <!-- Qatar -->
-
-                <article class="price-card">
-
-                    <div class="price-header">
-
-                        <h3>
-                            <span class="flag">
-                                🇶🇦
-                            </span>
-
-                            قطر
-                        </h3>
-
-                        <div class="price-currency">
-                            ريال قطري
-                        </div>
-
-                    </div>
-
-
-                    <div class="price-table-wrapper">
-
-                        <table class="price-table">
-
-                            <thead>
-
-                                <tr>
-                                    <th>مجموعة</th>
-                                    <th>فردية</th>
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <td>340</td>
-                                    <td>45</td>
-                                </tr>
-
-                                <tr>
-                                    <td>360</td>
-                                    <td>50</td>
-                                </tr>
-
-                                <tr>
-                                    <td>390</td>
-                                    <td>55</td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-
-                    <div class="price-note">
-                        تبدأ الفردية من 45 ريال
-                    </div>
-
-                </article>
-
-
-
-                <!-- UAE -->
-
-                <article class="price-card">
-
-                    <div class="price-header">
-
-                        <h3>
-                            <span class="flag">
-                                🇦🇪
-                            </span>
-
-                            الإمارات
-                        </h3>
-
-                        <div class="price-currency">
-                            درهم إماراتي
-                        </div>
-
-                    </div>
-
-
-                    <div class="price-table-wrapper">
-
-                        <table class="price-table">
-
-                            <thead>
-
-                                <tr>
-                                    <th>مجموعة</th>
-                                    <th>فردية</th>
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <td>340</td>
-                                    <td>45</td>
-                                </tr>
-
-                                <tr>
-                                    <td>360</td>
-                                    <td>50</td>
-                                </tr>
-
-                                <tr>
-                                    <td>390</td>
-                                    <td>55</td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-
-                    <div class="price-note">
-                        تبدأ الفردية من 45 درهم
-                    </div>
-
-                </article>
-
+                <!-- السعودية -->
+                <div class="price-card">
+                    <div class="price-header"><h3><span class="flag">🇸🇦</span> السعودية</h3><span class="currency">ريال سعودي</span></div>
+                    <table class="price-table">
+                        <thead><tr><th>مجموعة</th><th>ابتدائي</th></tr></thead>
+                        <tbody><tr><td>300</td><td>40</td></tr><tr><td>320</td><td>45</td></tr><tr><td>350</td><td>50</td></tr></tbody>
+                    </table>
+                    <div class="price-note">الفردية: 40 ريال</div>
+                </div>
+                <!-- الكويت -->
+                <div class="price-card">
+                    <div class="price-header"><h3><span class="flag">🇰🇼</span> الكويت</h3><span class="currency">دينار كويتي</span></div>
+                    <table class="price-table">
+                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
+                        <tbody><tr><td>30</td><td>4</td></tr><tr><td>32</td><td>4.5</td></tr><tr><td>35</td><td>5</td></tr></tbody>
+                    </table>
+                    <div class="price-note">الفردية: 4 دينار</div>
+                </div>
+                <!-- عُمان -->
+                <div class="price-card">
+                    <div class="price-header"><h3><span class="flag">🇴🇲</span> سلطنة عُمان</h3><span class="currency">ريال عماني</span></div>
+                    <table class="price-table">
+                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
+                        <tbody><tr><td>45</td><td>4.5</td></tr><tr><td>50</td><td>5</td></tr><tr><td>55</td><td>5.5</td></tr></tbody>
+                    </table>
+                    <div class="price-note">الفردية: 4.5 ريال</div>
+                </div>
+                <!-- قطر -->
+                <div class="price-card">
+                    <div class="price-header"><h3><span class="flag">🇶🇦</span> قطر</h3><span class="currency">ريال قطري</span></div>
+                    <table class="price-table">
+                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
+                        <tbody><tr><td>340</td><td>45</td></tr><tr><td>360</td><td>50</td></tr><tr><td>390</td><td>55</td></tr></tbody>
+                    </table>
+                    <div class="price-note">الفردية: 45 ريال</div>
+                </div>
+                <!-- الإمارات -->
+                <div class="price-card">
+                    <div class="price-header"><h3><span class="flag">🇦🇪</span> الإمارات</h3><span class="currency">درهم إماراتي</span></div>
+                    <table class="price-table">
+                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
+                        <tbody><tr><td>340</td><td>45</td></tr><tr><td>360</td><td>50</td></tr><tr><td>390</td><td>55</td></tr></tbody>
+                    </table>
+                    <div class="price-note">الفردية: 45 درهم</div>
+                </div>
             </div>
-
         </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         Why Us
-    ========================================== -->
-
-    <section
-        id="why-us"
-        class="section-alt"
-    >
-
+    <!-- لماذا نجود -->
+    <section id="why-us" style="background: #F1F5F9;">
         <div class="container reveal">
-
-            <div class="section-heading">
-
-                <span class="section-kicker">
-                    لماذا نجود؟
-                </span>
-
-                <h2>
-                    تعليم يركز على الفهم الحقيقي
-                </h2>
-
-                <p>
-                    تجربة تعليمية تساعد الطالب
-                    على بناء المهارة والثقة
-                    وليس مجرد حفظ المعلومة.
-                </p>
-
+            <div class="section-header">
+                <h2>لماذا تختار منصة نجود؟</h2>
+                <p>ركائز تعليمية مبتكرة تضمن تفوق أطفالكم بثقة</p>
             </div>
-
-
             <div class="features-grid">
-
-                <article class="feature-card">
-
-                    <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            التركيز على الفهم
-                        </h3>
-
-                        <p>
-                            نبتعد عن الحفظ المباشر
-                            ونركز على بناء التفكير
-                            والتحليل وحل المشكلات.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="feature-card">
-
-                    <div class="feature-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            تقنيات تعليم تفاعلية
-                        </h3>
-
-                        <p>
-                            استخدام وسائل رقمية
-                            وأساليب تعليم حديثة
-                            لزيادة تفاعل الطالب.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="feature-card">
-
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            متابعة وتقييم
-                        </h3>
-
-                        <p>
-                            متابعة مستوى الطالب
-                            وتقديم ملاحظات تساعد
-                            على اكتشاف نقاط القوة
-                            والجوانب التي تحتاج تحسيناً.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="feature-card">
-
-                    <div class="feature-icon">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            بيئة آمنة ومريحة
-                        </h3>
-
-                        <p>
-                            حصص أونلاين من المنزل
-                            في بيئة مريحة ومحفزة
-                            تساعد الطالب على التركيز.
-                        </p>
-
-                    </div>
-
-                </article>
-
+                <div class="feature-item"><i class="fas fa-brain"></i><div><h4>التركيز على الفهم</h4><p>نبتعد عن الحفظ المباشر لنبني تفكيراً تحليلياً متكاملاً.</p></div></div>
+                <div class="feature-item"><i class="fas fa-laptop-code"></i><div><h4>تقنيات تفاعلية</h4><p>استخدام أحدث أساليب التعليم الرقمي لتشويق الطالب.</p></div></div>
+                <div class="feature-item"><i class="fas fa-chart-line"></i><div><h4>تقارير دورية</h4><p>متابعة تقييمية مستمرة لولي الأمر لملاحظة التطور.</p></div></div>
+                <div class="feature-item"><i class="fas fa-user-shield"></i><div><h4>بيئة آمنة ومريحة</h4><p>حصص أونلاين بيئتها محفزة ومريحة للطفل من المنزل.</p></div></div>
             </div>
-
         </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         FAQ
-    ========================================== -->
-
+    <!-- FAQ -->
     <section id="faq">
-
         <div class="container reveal">
-
-            <div class="section-heading">
-
-                <span class="section-kicker">
-                    FAQ
-                </span>
-
-                <h2>
-                    الأسئلة الشائعة
-                </h2>
-
-                <p>
-                    إجابات سريعة لأهم استفسارات
-                    الطلاب وأولياء الأمور.
-                </p>
-
+            <div class="section-header">
+                <h2>الأسئلة الشائعة</h2>
+                <p>إجابات لأهم الاستفسارات لدى أولياء الأمور</p>
             </div>
-
-
             <div class="faq-list">
-
-
-                <article class="faq-item">
-
-                    <button
-                        class="faq-question"
-                        type="button"
-                        aria-expanded="false"
-                    >
-
-                        <span>
-                            ما مدة صلاحية الباقة؟
-                        </span>
-
-                        <i class="fas fa-chevron-down"></i>
-
-                    </button>
-
-
-                    <div class="faq-answer">
-
-                        <div class="faq-answer-inner">
-
-                            <p>
-                                صلاحية جميع الباقات
-                                8 أسابيع تبدأ من تاريخ
-                                أول حصة فعلية.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="faq-item">
-
-                    <button
-                        class="faq-question"
-                        type="button"
-                        aria-expanded="false"
-                    >
-
-                        <span>
-                            كم عدد الطلاب في المجموعات؟
-                        </span>
-
-                        <i class="fas fa-chevron-down"></i>
-
-                    </button>
-
-
-                    <div class="faq-answer">
-
-                        <div class="faq-answer-inner">
-
-                            <p>
-                                تتكون المجموعة من
-                                2 إلى 3 طلاب كحد أقصى
-                                لضمان التركيز والمتابعة
-                                لكل طالب.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="faq-item">
-
-                    <button
-                        class="faq-question"
-                        type="button"
-                        aria-expanded="false"
-                    >
-
-                        <span>
-                            كيف يتم تنظيم المواعيد؟
-                        </span>
-
-                        <i class="fas fa-chevron-down"></i>
-
-                    </button>
-
-
-                    <div class="faq-answer">
-
-                        <div class="faq-answer-inner">
-
-                            <p>
-                                يتم الاتفاق على المواعيد
-                                المناسبة للطالب أو المجموعة
-                                عبر التواصل المباشر
-                                على واتساب.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
+                <div class="faq-item">
+                    <div class="faq-question">ما هي مدة صلاحية الباقة؟ <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">صلاحية جميع الباقات 8 أسابيع تبدأ من تاريخ أول حصة فعليّة.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">كم عدد الطلاب في المجموعات؟ <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">تتكون المجموعات من 2 إلى 3 طلاب كحد أقصى لضمان التركيز والمتابعة الفردية لكل طالب.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">كيف يتم تنظيم المواعيد؟ <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">يتم الاتفاق على المواعيد المناسبة لكل طالب أو مجموعة عبر التواصل المباشر معنا على الواتساب.</div>
+                </div>
             </div>
-
         </div>
-
     </section>
 
-
-
-    <!-- =========================================
-         Final CTA
-    ========================================== -->
-
-    <section class="cta-section">
-
-        <div class="container">
-
-            <div class="cta-box reveal">
-
-                <div class="cta-content">
-
-                    <h2>
-                        جاهز تبدأ رحلة تعلم أفضل؟
-                    </h2>
-
-                    <p>
-                        تواصل معنا الآن لمعرفة
-                        الباقة المناسبة والمواعيد المتاحة.
-                    </p>
-
-                </div>
-
-
-                <div class="cta-action">
-
-                    <a
-                        href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود،%20أريد%20معرفة%20الباقة%20المناسبة"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="button button-primary"
-                    >
-                        <i class="fab fa-whatsapp"></i>
-
-                        تواصل معنا
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================
-         Footer
-    ========================================== -->
-
+    <!-- Footer -->
     <footer>
+        <div class="footer-logo">Njoud EDU</div>
+        <div class="footer-slogan">نجود .. حيث يبدأ الفهم ، ويصنع النجاح ✨</div>
+        
+        <!-- أيقونات التواصل الاجتماعي -->
+        <div class="social-links">
+            <a href="https://www.facebook.com/people/Njoud-Edu/pfbid0cPSGYibRWDNbisv1RCwdEm8CiwV5zWiwmqfAWXcCF8NBxD5eLZfhbECUVRUXpW2Cl/" target="_blank" class="social-btn" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@njoudedu" target="_blank" class="social-btn" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/njoudedu1/" target="_blank" class="social-btn" title="انستجرام"><i class="fab fa-instagram"></i></a>
+            
+            <!-- أيقونة X الرسمية بـ SVG مضمن -->
+            <a href="https://x.com/NjoudEdu" target="_blank" class="social-btn" title="منصة X">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                </svg>
+            </a>
 
-        <div class="footer-logo">
-
-            <img
-                src="logo.png"
-                alt="Njoud EDU"
-            >
-
+            <a href="#" target="_blank" class="social-btn" title="تليجرام"><i class="fab fa-telegram-plane"></i></a>
+            <a href="#" target="_blank" class="social-btn" title="سناب شات"><i class="fab fa-snapchat"></i></a>
         </div>
 
-
-        <div class="footer-brand">
-            Njoud EDU
-        </div>
-
-
-        <p class="footer-slogan">
-            نجود .. حيث يبدأ الفهم، ويُصنع النجاح ✨
-        </p>
-
-
-        <p class="footer-rights">
-            جميع الحقوق محفوظة ©
-            <span id="currentYear">2026</span>
-            |
-            NjoudEdu.com
-        </p>
-
+        <p class="footer-rights">جميع الحقوق محفوظة © 2026 | NjoudEdu.com</p>
     </footer>
 
-
-
-    <!-- =========================================
-         Floating WhatsApp
-    ========================================== -->
-
-    <a
-        href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="whatsapp-float"
-        aria-label="التواصل مع منصة نجود على واتساب"
-    >
+    <!-- أزرار الواتساب والعودة للأعلى -->
+    <a href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+    <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
 
-
-
-    <!-- =========================================
-         Back To Top
-    ========================================== -->
-
-    <button
-        class="back-to-top"
-        id="backToTop"
-        type="button"
-        aria-label="العودة إلى أعلى الصفحة"
-    >
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-
-
-    <!-- =========================================
-         JavaScript
-    ========================================== -->
-
+    <!-- JavaScript -->
     <script>
-
-        /* =========================================
-           Mobile Navigation
-        ========================================== */
-
-        const mobileMenuButton =
-            document.getElementById(
-                "mobileMenuButton"
-            );
-
-        const mainNavigation =
-            document.getElementById(
-                "mainNavigation"
-            );
-
-        const mobileMenuIcon =
-            mobileMenuButton
-                ?.querySelector("i");
-
-
-        function openMenu() {
-
-            mainNavigation
-                .classList
-                .add("open");
-
-            document.body
-                .classList
-                .add("menu-open");
-
-            mobileMenuButton
-                .setAttribute(
-                    "aria-expanded",
-                    "true"
-                );
-
-            mobileMenuButton
-                .setAttribute(
-                    "aria-label",
-                    "إغلاق القائمة"
-                );
-
-            if (mobileMenuIcon) {
-
-                mobileMenuIcon
-                    .classList
-                    .remove("fa-bars");
-
-                mobileMenuIcon
-                    .classList
-                    .add("fa-times");
-
+        // Scroll Reveal Effect
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                var revealPoint = 150;
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
             }
-
         }
+        reveal();
 
-
-        function closeMenu() {
-
-            mainNavigation
-                .classList
-                .remove("open");
-
-            document.body
-                .classList
-                .remove("menu-open");
-
-            mobileMenuButton
-                .setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            mobileMenuButton
-                .setAttribute(
-                    "aria-label",
-                    "فتح القائمة"
-                );
-
-            if (mobileMenuIcon) {
-
-                mobileMenuIcon
-                    .classList
-                    .remove("fa-times");
-
-                mobileMenuIcon
-                    .classList
-                    .add("fa-bars");
-
-            }
-
-        }
-
-
-        mobileMenuButton
-            ?.addEventListener(
-                "click",
-                function () {
-
-                    const isOpen =
-                        mainNavigation
-                            .classList
-                            .contains("open");
-
-                    if (isOpen) {
-                        closeMenu();
-                    } else {
-                        openMenu();
-                    }
-
-                }
-            );
-
-
-        mainNavigation
-            ?.querySelectorAll("a")
-            .forEach(function (link) {
-
-                link.addEventListener(
-                    "click",
-                    closeMenu
-                );
-
-            });
-
-
-        document.addEventListener(
-            "click",
-            function (event) {
-
-                if (
-                    window.innerWidth <= 900 &&
-                    mainNavigation
-                        .classList
-                        .contains("open") &&
-                    !event.target.closest(".navbar")
-                ) {
-
-                    closeMenu();
-
-                }
-
-            }
-        );
-
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (event.key === "Escape") {
-                    closeMenu();
-                }
-
-            }
-        );
-
-
-        window.addEventListener(
-            "resize",
-            function () {
-
-                if (window.innerWidth > 900) {
-                    closeMenu();
-                }
-
-            }
-        );
-
-
-
-        /* =========================================
-           FAQ
-        ========================================== */
-
-        document
-            .querySelectorAll(".faq-item")
-            .forEach(function (item) {
-
-                const question =
-                    item.querySelector(
-                        ".faq-question"
-                    );
-
-                question
-                    .addEventListener(
-                        "click",
-                        function () {
-
-                            const isActive =
-                                item
-                                    .classList
-                                    .toggle(
-                                        "active"
-                                    );
-
-                            question
-                                .setAttribute(
-                                    "aria-expanded",
-                                    isActive
-                                        ? "true"
-                                        : "false"
-                                );
-
+        // Stats Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        let countStarted = false;
+        window.addEventListener('scroll', () => {
+            const statsSection = document.querySelector('.stats-section');
+            if (!statsSection) return;
+            const pos = statsSection.getBoundingClientRect().top;
+            if (pos < window.innerHeight && !countStarted) {
+                countStarted = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const updateCount = () => {
+                        const count = +counter.innerText;
+                        const inc = target / 40;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 40);
+                        } else {
+                            counter.innerText = target + (target === 100 ? '%' : '+');
                         }
-                    );
+                    };
+                    updateCount();
+                });
+            }
+        });
 
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
             });
+        });
 
-
-
-        /* =========================================
-           Back To Top
-        ========================================== */
-
-        const backToTop =
-            document.getElementById(
-                "backToTop"
-            );
-
-
-        function updateBackToTop() {
-
-            if (
-                window.scrollY > 450
-            ) {
-
-                backToTop
-                    .classList
-                    .add("visible");
-
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
             } else {
-
-                backToTop
-                    .classList
-                    .remove("visible");
-
+                backToTop.classList.remove('show');
             }
-
-        }
-
-
-        window.addEventListener(
-            "scroll",
-            updateBackToTop,
-            {
-                passive: true
-            }
-        );
-
-
-        updateBackToTop();
-
-
-        backToTop
-            .addEventListener(
-                "click",
-                function () {
-
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
-
-                }
-            );
-
-
-
-        /* =========================================
-           Reveal Animation
-        ========================================== */
-
-        const revealElements =
-            document.querySelectorAll(
-                ".reveal"
-            );
-
-
-        if (
-            "IntersectionObserver"
-            in window
-        ) {
-
-            const revealObserver =
-                new IntersectionObserver(
-
-                    function (
-                        entries,
-                        observer
-                    ) {
-
-                        entries.forEach(
-                            function (entry) {
-
-                                if (
-                                    entry.isIntersecting
-                                ) {
-
-                                    entry
-                                        .target
-                                        .classList
-                                        .add(
-                                            "visible"
-                                        );
-
-                                    observer
-                                        .unobserve(
-                                            entry.target
-                                        );
-
-                                }
-
-                            }
-                        );
-
-                    },
-
-                    {
-                        threshold: 0.10
-                    }
-
-                );
-
-
-            revealElements
-                .forEach(
-                    function (element) {
-
-                        revealObserver
-                            .observe(element);
-
-                    }
-                );
-
-        } else {
-
-            revealElements
-                .forEach(
-                    function (element) {
-
-                        element
-                            .classList
-                            .add("visible");
-
-                    }
-                );
-
-        }
-
-
-
-        /* =========================================
-           Stats Counter
-        ========================================== */
-
-        const counters =
-            document.querySelectorAll(
-                ".counter"
-            );
-
-        const statsSection =
-            document.getElementById(
-                "statsSection"
-            );
-
-        let countersStarted = false;
-
-
-        function animateCounter(counter) {
-
-            const target =
-                Number(
-                    counter.dataset.target
-                );
-
-            const suffix =
-                counter.dataset.suffix || "";
-
-            const duration = 1200;
-
-            const start =
-                performance.now();
-
-
-            function update(now) {
-
-                const progress =
-                    Math.min(
-                        (
-                            now - start
-                        ) / duration,
-                        1
-                    );
-
-                const easedProgress =
-                    1 -
-                    Math.pow(
-                        1 - progress,
-                        3
-                    );
-
-                const value =
-                    Math.floor(
-                        target *
-                        easedProgress
-                    );
-
-                counter.textContent =
-                    value + suffix;
-
-
-                if (progress < 1) {
-
-                    requestAnimationFrame(
-                        update
-                    );
-
-                } else {
-
-                    counter.textContent =
-                        target + suffix;
-
-                }
-
-            }
-
-
-            requestAnimationFrame(
-                update
-            );
-
-        }
-
-
-        if (
-            statsSection &&
-            "IntersectionObserver"
-            in window
-        ) {
-
-            const statsObserver =
-                new IntersectionObserver(
-
-                    function (entries) {
-
-                        entries.forEach(
-                            function (entry) {
-
-                                if (
-                                    entry.isIntersecting &&
-                                    !countersStarted
-                                ) {
-
-                                    countersStarted =
-                                        true;
-
-                                    counters
-                                        .forEach(
-                                            animateCounter
-                                        );
-
-                                    statsObserver
-                                        .disconnect();
-
-                                }
-
-                            }
-                        );
-
-                    },
-
-                    {
-                        threshold: 0.35
-                    }
-
-                );
-
-
-            statsObserver
-                .observe(
-                    statsSection
-                );
-
-        } else {
-
-            counters
-                .forEach(
-                    function (counter) {
-
-                        counter.textContent =
-                            counter.dataset.target +
-                            (
-                                counter.dataset.suffix ||
-                                ""
-                            );
-
-                    }
-                );
-
-        }
-
-
-
-        /* =========================================
-           Current Year
-        ========================================== */
-
-        const currentYear =
-            document.getElementById(
-                "currentYear"
-            );
-
-        if (currentYear) {
-
-            currentYear.textContent =
-                new Date()
-                    .getFullYear();
-
-        }
-
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
-
 </body>
 </html>
