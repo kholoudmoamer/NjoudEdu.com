@@ -1,530 +1,533 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO & Open Graph Meta Tags -->
-    <title>منصة نجود التعليمية | Njoud EDU</title>
-    <meta name="description" content="نجود منصة تعليمية متخصصة في تدريس الرياضيات والعلوم والفيزياء والبرمجة للمناهج الخليجية، بأسلوب يركز على الفهم، وتنمية التفكير، وبناء الثقة لدى الطالب من خلال حصص تفاعلية ومتابعة مستمرة.">
-    <meta name="keywords" content="دروس خصوصية, رياضيات, علوم, فيزياء, برمجة, STEM, السعودية, الكويت, قطر, الإمارات, عمان">
-    <meta property="og:title" content="منصة نجود التعليمية | Njoud EDU">
-    <meta property="og:description" content="تعلم بذكاء .. تميز بثقة. دروس أونلاين تفاعلية لمناهج دول الخليج.">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:type" content="website">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Open Graph Meta Tags -->
+    <title>منصة نجود التعليمية | Njoud EDU</title>
+    <meta name="description" content="منصة نجود التعليمية لتقديم دروس خصوصية أونلاين بجودة عالية في الرياضيات والعلوم والفيزياء والبرمجة وSTEM لدول الخليج.">
+    <meta name="keywords" content="دروس خصوصية, رياضيات, علوم, فيزياء, برمجة, STEM, السعودية, الكويت, قطر, الإمارات, عمان">
+    <meta property="og:title" content="منصة نجود التعليمية | Njoud EDU">
+    <meta property="og:description" content="تعلم بذكاء .. تميز بثقة. دروس أونلاين تفاعلية لمناهج دول الخليج.">
+    <meta property="og:url" content="https://njoudedu.com">
+    <meta property="og:type" content="website">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Fonts: Cairo & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Fonts: Cairo & Font Awesome Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0B2545;
+            --primary-dark: #071930;
+            --accent: #EEA48F;
+            --accent-hover: #e0917a;
+            --bg-light: #FAF8F5;
+            --card-bg: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --shadow-sm: 0 4px 12px rgba(11, 37, 69, 0.05);
+            --shadow-md: 0 10px 25px rgba(11, 37, 69, 0.08);
+            --shadow-lg: 0 15px 35px rgba(11, 37, 69, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    <style>
-        :root {
-            --primary: #0B2545;
-            --primary-dark: #071930;
-            --accent: #EEA48F;
-            --accent-hover: #e0917a;
-            --bg-light: #FAF8F5;
-            --card-bg: #FFFFFF;
-            --text-dark: #1E293B;
-            --text-muted: #64748B;
-            --shadow-sm: 0 4px 12px rgba(11, 37, 69, 0.05);
-            --shadow-md: 0 10px 25px rgba(11, 37, 69, 0.08);
-            --shadow-lg: 0 15px 35px rgba(11, 37, 69, 0.12);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
+        /* CSS Logo Design */
+        .logo-badge {
+            background: var(--primary);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
 
-        /* Navbar ثابت احترافي */
-        .navbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            background: rgba(11, 37, 69, 0.96);
-            backdrop-filter: blur(10px);
-            padding: 12px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
-            border-bottom: 2px solid rgba(238, 164, 143, 0.3);
-        }
+        /* Navbar ثابت احترافي */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(11, 37, 69, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+            border-bottom: 2px solid rgba(238, 164, 143, 0.3);
+        }
 
-        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo img { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; }
-        .nav-logo span { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 0.5px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav-logo .logo-badge { width: 46px; height: 46px; font-size: 22px; }
+        .nav-logo span { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 0.5px; }
 
-        .nav-links { display: flex; gap: 25px; list-style: none; }
-        .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; font-size: 15px; transition: var(--transition); }
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; font-size: 15px; transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent); }
 
-        .nav-btn {
-            background: var(--accent);
-            color: var(--primary-dark) !important;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 700 !important;
-            transition: var(--transition);
-        }
-        .nav-btn:hover { background: #fff; transform: translateY(-2px); }
+        .nav-btn {
+            background: var(--accent);
+            color: var(--primary-dark) !important;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700 !important;
+            transition: var(--transition);
+        }
+        .nav-btn:hover { background: #fff; transform: translateY(-2px); }
 
-        /* Hero Section معدل لاستخدام الغلاف البانورامي الجديد */
-        .hero {
-            position: relative;
-            padding: 180px 5% 120px;
-            /* تم تعديل الخلفية لاستخدام الصورة البانورامية الجديدة مع تراكب لوني خفيف لوضوح النص */
-            background: radial-gradient(circle at top right, rgba(19, 56, 99, 0.3) 0%, rgba(7, 25, 48, 0.5) 100%), 
-                        url('hero-panoramic.png') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            overflow: hidden;
-        }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 160px 5% 100px;
+            background: linear-gradient(135deg, rgba(7, 25, 48, 0.92) 0%, rgba(11, 37, 69, 0.88) 100%), 
+                        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
 
-        .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
-        
-        /* تنسيق الشعار الدائري ليكون بارزاً ومنفصلاً فوق الغلاف */
-        .hero-avatar { 
-            width: 150px; 
-            height: 150px; 
-            border-radius: 50%; 
-            border: 5px solid var(--accent); 
-            margin: 0 auto 30px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
-            animation: pulse 3s infinite;
-            object-fit: cover;
-            background: white; /* خلفية بيضاء للشعار ليفصل عن الغلاف */
-            display: block;
-        }
-        
-        .hero h1 { font-size: 48px; font-weight: 900; margin-bottom: 12px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        .hero .slogan { font-size: 26px; color: var(--accent); font-weight: 700; margin-bottom: 25px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        .hero p { font-size: 19px; opacity: 0.95; max-width: 800px; margin: 0 auto 40px; font-weight: 500; line-height: 1.8; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
+        .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+        .hero-avatar { 
+            width: 120px; 
+            height: 120px; 
+            font-size: 60px; 
+            border-width: 4px; 
+            margin: 0 auto 20px; 
+            box-shadow: var(--shadow-lg); 
+            animation: pulse 3s infinite; 
+        }
+        
+        .hero h1 { font-size: 46px; font-weight: 900; margin-bottom: 15px; line-height: 1.2; }
+        .hero .slogan { font-size: 24px; color: var(--accent); font-weight: 700; margin-bottom: 20px; }
+        .hero p { font-size: 18px; opacity: 0.9; max-width: 750px; margin: 0 auto 35px; font-weight: 400; }
 
-        .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn-primary { background: var(--accent); color: var(--primary-dark); padding: 14px 35px; border-radius: 50px; font-weight: 800; font-size: 18px; text-decoration: none; transition: var(--transition); box-shadow: 0 5px 20px rgba(238, 164, 143, 0.4); }
-        .btn-primary:hover { background: #fff; transform: translateY(-3px); }
+        .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-primary { background: var(--accent); color: var(--primary-dark); padding: 14px 35px; border-radius: 50px; font-weight: 800; font-size: 18px; text-decoration: none; transition: var(--transition); box-shadow: 0 5px 20px rgba(238, 164, 143, 0.4); }
+        .btn-primary:hover { background: #fff; transform: translateY(-3px); }
 
-        .btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1.5px solid var(--accent); padding: 14px 35px; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: var(--transition); }
-        .btn-secondary:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
+        .btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1.5px solid var(--accent); padding: 14px 35px; border-radius: 50px; font-weight: 700; font-size: 18px; text-decoration: none; transition: var(--transition); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.2); transform: translateY(-3px); }
 
-        /* Stats Counter Section */
-        .stats-section {
-            background: #fff;
-            padding: 40px 5%;
-            margin-top: -40px;
-            position: relative;
-            z-index: 10;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
+        /* Stats Counter Section */
+        .stats-section {
+            background: #fff;
+            padding: 40px 5%;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
 
-        .stat-item h3 { font-size: 38px; color: var(--primary); font-weight: 800; }
-        .stat-item p { font-size: 15px; color: var(--text-muted); font-weight: 600; }
+        .stat-item h3 { font-size: 38px; color: var(--primary); font-weight: 800; }
+        .stat-item p { font-size: 15px; color: var(--text-muted); font-weight: 600; }
 
-        /* Sections General */
-        section { padding: 80px 5%; }
-        .container { max-width: 1100px; margin: 0 auto; }
-        
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 34px; color: var(--primary); font-weight: 800; position: relative; display: inline-block; padding-bottom: 10px; }
-        .section-header h2::after { content: ''; width: 50%; height: 4px; background: var(--accent); position: absolute; bottom: 0; right: 25%; border-radius: 2px; }
-        .section-header p { color: var(--text-muted); font-size: 17px; margin-top: 10px; }
+        /* Sections General */
+        section { padding: 80px 5%; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 34px; color: var(--primary); font-weight: 800; position: relative; display: inline-block; padding-bottom: 10px; }
+        .section-header h2::after { content: ''; width: 50%; height: 4px; background: var(--accent); position: absolute; bottom: 0; right: 25%; border-radius: 2px; }
+        .section-header p { color: var(--text-muted); font-size: 17px; margin-top: 10px; }
 
-        /* الأقسام والمواد */
-        .subjects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .subject-card {
-            background: var(--card-bg);
-            padding: 30px 20px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(238, 164, 143, 0.2);
-            transition: var(--transition);
-        }
-        .subject-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
-        .subject-card i { font-size: 40px; color: var(--primary); margin-bottom: 15px; }
-        .subject-card h3 { font-size: 20px; color: var(--primary); font-weight: 700; }
+        /* الأقسام والمواد */
+        .subjects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .subject-card {
+            background: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(238, 164, 143, 0.2);
+            transition: var(--transition);
+        }
+        .subject-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .subject-card i { font-size: 40px; color: var(--primary); margin-bottom: 15px; }
+        .subject-card h3 { font-size: 20px; color: var(--primary); font-weight: 700; }
 
-        /* المناهج ودول الخليج */
-        .gulf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
-        .gulf-card {
-            background: var(--card-bg);
-            padding: 25px 15px;
-            border-radius: 18px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid #E2E8F0;
-            transition: var(--transition);
-        }
-        .gulf-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--accent); }
-        .gulf-card .flag { font-size: 40px; margin-bottom: 10px; }
-        .gulf-card h3 { font-size: 18px; color: var(--primary); font-weight: 700; }
-        .gulf-card p { font-size: 13px; color: var(--text-muted); margin-top: 5px; }
+        /* المناهج ودول الخليج */
+        .gulf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+        .gulf-card {
+            background: var(--card-bg);
+            padding: 25px 15px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #E2E8F0;
+            transition: var(--transition);
+        }
+        .gulf-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+        .gulf-card .flag { font-size: 40px; margin-bottom: 10px; }
+        .gulf-card h3 { font-size: 18px; color: var(--primary); font-weight: 700; }
+        .gulf-card p { font-size: 13px; color: var(--text-muted); margin-top: 5px; }
 
-        /* جداول الأسعار للباقات */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
-        .price-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 25px 18px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid #E2E8F0;
-            transition: var(--transition);
-            display: flex; flex-direction: column; justify-content: space-between;
-        }
-        .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
-        .price-header { background: var(--primary); color: white; padding: 12px; border-radius: 14px; text-align: center; margin-bottom: 15px; }
-        .price-header h3 { font-size: 18px; font-weight: 700; }
-        .price-header .currency { font-size: 12px; color: var(--accent); }
-        .price-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
-        .price-table th, .price-table td { padding: 8px 4px; font-size: 14px; border: 1px solid #F1F5F9; text-align: center; }
-        .price-table th { background: #F8FAFC; color: var(--primary); font-weight: 700; }
-        .price-note { background: rgba(238, 164, 143, 0.15); color: var(--primary); padding: 8px; border-radius: 10px; font-size: 13px; font-weight: 700; text-align: center; }
+        /* جداول الأسعار للباقات */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
+        .price-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px 18px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #E2E8F0;
+            transition: var(--transition);
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .price-header { background: var(--primary); color: white; padding: 12px; border-radius: 14px; text-align: center; margin-bottom: 15px; }
+        .price-header h3 { font-size: 18px; font-weight: 700; }
+        .price-header .currency { font-size: 12px; color: var(--accent); }
+        .price-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+        .price-table th, .price-table td { padding: 8px 4px; font-size: 14px; border: 1px solid #F1F5F9; text-align: center; }
+        .price-table th { background: #F8FAFC; color: var(--primary); font-weight: 700; }
+        .price-note { background: rgba(238, 164, 143, 0.15); color: var(--primary); padding: 8px; border-radius: 10px; font-size: 13px; font-weight: 700; text-align: center; }
 
-        /* لماذا نجود */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .feature-item {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 18px;
-            box-shadow: var(--shadow-sm);
-            border-right: 5px solid var(--accent);
-            display: flex; gap: 15px; align-items: flex-start;
-        }
-        .feature-item i { font-size: 26px; color: var(--primary); margin-top: 3px; }
-        .feature-item h4 { font-size: 18px; color: var(--primary); font-weight: 700; margin-bottom: 5px; }
-        .feature-item p { font-size: 14px; color: var(--text-muted); }
+        /* لماذا نجود */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .feature-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: var(--shadow-sm);
+            border-right: 5px solid var(--accent);
+            display: flex; gap: 15px; align-items: flex-start;
+        }
+        .feature-item i { font-size: 26px; color: var(--primary); margin-top: 3px; }
+        .feature-item h4 { font-size: 18px; color: var(--primary); font-weight: 700; margin-bottom: 5px; }
+        .feature-item p { font-size: 14px; color: var(--text-muted); }
 
-        /* FAQ */
-        .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-        .faq-item { background: var(--card-bg); border-radius: 14px; padding: 20px; box-shadow: var(--shadow-sm); border: 1px solid #E2E8F0; cursor: pointer; transition: var(--transition); }
-        .faq-question { font-size: 17px; font-weight: 700; color: var(--primary); display: flex; justify-content: space-between; align-items: center; }
-        .faq-answer { margin-top: 10px; font-size: 15px; color: var(--text-muted); display: none; }
-        .faq-item.active .faq-answer { display: block; }
-        .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--accent); }
+        /* FAQ */
+        .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        .faq-item { background: var(--card-bg); border-radius: 14px; padding: 20px; box-shadow: var(--shadow-sm); border: 1px solid #E2E8F0; cursor: pointer; transition: var(--transition); }
+        .faq-question { font-size: 17px; font-weight: 700; color: var(--primary); display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { margin-top: 10px; font-size: 15px; color: var(--text-muted); display: none; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--accent); }
 
-        /* Footer */
-        footer { background: var(--primary-dark); color: white; padding: 50px 5% 20px; border-top: 4px solid var(--accent); text-align: center; }
-        .footer-logo { font-size: 26px; font-weight: 800; color: white; margin-bottom: 10px; }
-        .footer-slogan { color: var(--accent); font-weight: 600; margin-bottom: 25px; }
-        .footer-rights { opacity: 0.75; font-size: 14px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+        /* Footer */
+        footer { background: var(--primary-dark); color: white; padding: 50px 5% 20px; border-top: 4px solid var(--accent); text-align: center; }
+        .footer-logo { font-size: 26px; font-weight: 800; color: white; margin-bottom: 10px; }
+        .footer-slogan { color: var(--accent); font-weight: 600; margin-bottom: 25px; }
+        .footer-rights { opacity: 0.75; font-size: 14px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
 
-        /* عناصر ثابتة: أزرار الواتساب والعودة للأعلى */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px; left: 25px;
-            background: #25D366; color: white;
-            width: 60px; height: 60px;
-            border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 32px;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            z-index: 999;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-        .whatsapp-float:hover { transform: scale(1.1); }
+        /* عناصر ثابتة: أزرار الواتساب والعودة للأعلى */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px; left: 25px;
+            background: #25D366; color: white;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 32px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 25px; right: 25px;
-            background: var(--primary); color: white;
-            width: 45px; height: 45px;
-            border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            font-size: 18px;
-            box-shadow: var(--shadow-md);
-            z-index: 999;
-            opacity: 0; pointer-events: none;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-        .back-to-top.show { opacity: 1; pointer-events: auto; }
+        .back-to-top {
+            position: fixed;
+            bottom: 25px; right: 25px;
+            background: var(--primary); color: white;
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 18px;
+            box-shadow: var(--shadow-md);
+            z-index: 999;
+            opacity: 0; pointer-events: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .back-to-top.show { opacity: 1; pointer-events: auto; }
 
-        /* Keyframes Animations */
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        /* Keyframes Animations */
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* Responsive Media Queries */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 32px; }
-            .hero .slogan { font-size: 18px; }
-            .stats-section { grid-template-columns: repeat(2, 1fr); margin-top: -20px; }
-            .btn-primary, .btn-secondary { width: 100%; text-align: center; }
-            .hero-avatar { width: 120px; height: 120px; }
-        }
-    </style>
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 32px; }
+            .hero .slogan { font-size: 18px; }
+            .stats-section { grid-template-columns: repeat(2, 1fr); margin-top: -20px; }
+            .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navbar ثابت -->
-    <nav class="navbar">
-        <a href="#" class="nav-logo">
-            <img src="logo.png" alt="Njoud EDU Logo">
-            <span>Njoud EDU</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="#subjects">المواد</a></li>
-            <li><a href="#curriculums">المناهج</a></li>
-            <li><a href="#pricing">الباقات</a></li>
-            <li><a href="#why-us">لماذا نجود</a></li>
-            <li><a href="#faq">الأسئلة الشائعة</a></li>
-            <li><a href="https://wa.me/201039353583" target="_blank" class="nav-btn">احجز الآن</a></li>
-        </ul>
-    </nav>
+    <!-- Navbar ثابت -->
+    <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <div class="logo-badge">N</div>
+            <span>Njoud EDU</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#subjects">المواد</a></li>
+            <li><a href="#curriculums">المناهج</a></li>
+            <li><a href="#pricing">الباقات</a></li>
+            <li><a href="#why-us">لماذا نجود</a></li>
+            <li><a href="#faq">الأسئلة الشائعة</a></li>
+            <li><a href="https://wa.me/201039353583" target="_blank" class="nav-btn">احجز الآن</a></li>
+        </ul>
+    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <!-- الشعار الدائري الحقيقي مرفوع هنا -->
-            <img src="logo.png" alt="Njoud Logo" class="hero-avatar">
-            <h1>منصة نجود التعليمية</h1>
-            <div class="slogan">تعلم بذكاء .. تميز بثقة</div>
-            <p>نجود منصة تعليمية متخصصة في تدريس الرياضيات والعلوم والفيزياء والبرمجة للمناهج الخليجية، بأسلوب يركز على الفهم، وتنمية التفكير، وبناء الثقة لدى الطالب من خلال حصص تفاعلية ومتابعة مستمرة.</p>
-            <div class="hero-btns">
-                <a href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود،%20أود%20الاستفسار%20عن%20تفاصيل%20الحجز" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> احجز أولى حصصك الآن</a>
-                <a href="#pricing" class="btn-secondary">استعرض الباقات</a>
-            </div>
-        </div>
-    </header>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-badge hero-avatar">N</div>
+            <h1>منصة نجود التعليمية</h1>
+            <div class="slogan">تعلم بذكاء .. تميز بثقة</div>
+            <p>دروس خصوصية أونلاين تفاعلية فائقة الجودة في الرياضيات والعلوم والفيزياء والبرمجة وSTEM لمناهج دول الخليج.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود،%20أود%20الاستفسار%20عن%20تفاصيل%20الحجز" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> احجز أولى حصصك الآن</a>
+                <a href="#pricing" class="btn-secondary">استعرض الباقات</a>
+            </div>
+        </div>
+    </header>
 
-    <!-- عداد الأرقام (Stats Counter) -->
-    <div class="stats-section reveal">
-        <div class="stat-item">
-            <h3 class="counter" data-target="100">0</h3>
-            <p>نسبة التميز والفهم</p>
-        </div>
-        <div class="stat-item">
-            <h3 class="counter" data-target="5">0</h3>
-            <p>دول خليجية نخدمها</p>
-        </div>
-        <div class="stat-item">
-            <h3 class="counter" data-target="8">0</h3>
-            <p>أسابيع صلاحية الباقة</p>
-        </div>
-    </div>
+    <!-- عداد الأرقام (Stats Counter) -->
+    <div class="stats-section reveal">
+        <div class="stat-item">
+            <h3 class="counter" data-target="100">0</h3>
+            <p>نسبة التميز والفهم</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="5">0</h3>
+            <p>دول خليجية نخدمها</p>
+        </div>
+        <div class="stat-item">
+            <h3 class="counter" data-target="8">0</h3>
+            <p>أسابيع صلاحية الباقة</p>
+        </div>
+    </div>
 
-    <!-- قسم المواد -->
-    <section id="subjects">
-        <div class="container reveal">
-            <div class="section-header">
-                <h2>المواد التي نغطيها</h2>
-                <p>شرح مبسط وتأسيس عميق على أيدي معلمات متخصصات</p>
-            </div>
-            <div class="subjects-grid">
-                <div class="subject-card"><i class="fas fa-calculator"></i><h3>الرياضيات (Math)</h3></div>
-                <div class="subject-card"><i class="fas fa-flask"></i><h3>العلوم (Science)</h3></div>
-                <div class="subject-card"><i class="fas fa-atom"></i><h3>الفيزياء (Physics)</h3></div>
-                <div class="subject-card"><i class="fas fa-code"></i><h3>البرمجة (Coding)</h3></div>
-                <div class="subject-card"><i class="fas fa-microscope"></i><h3>STEM</h3></div>
-            </div>
-        </div>
-    </section>
+    <!-- قسم المواد -->
+    <section id="subjects">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>المواد التي نغطيها</h2>
+                <p>شرح مبسط وتأسيس عميق على أيدي معلمات متخصصات</p>
+            </div>
+            <div class="subjects-grid">
+                <div class="subject-card"><i class="fas fa-calculator"></i><h3>الرياضيات (Math)</h3></div>
+                <div class="subject-card"><i class="fas fa-flask"></i><h3>العلوم (Science)</h3></div>
+                <div class="subject-card"><i class="fas fa-atom"></i><h3>الفيزياء (Physics)</h3></div>
+                <div class="subject-card"><i class="fas fa-code"></i><h3>البرمجة (Coding)</h3></div>
+                <div class="subject-card"><i class="fas fa-microscope"></i><h3>STEM</h3></div>
+            </div>
+        </div>
+    </section>
 
-    <!-- قسم المناهج والدول -->
-    <section id="curriculums" style="background: #F1F5F9;">
-        <div class="container reveal">
-            <div class="section-header">
-                <h2>نخدم طلابنا في دول الخليج</h2>
-                <p>مناهج معتمدة ومتوافقة تماماً مع معايير كل دولة</p>
-            </div>
-            <div class="gulf-grid">
-                <div class="gulf-card"><div class="flag">🇸🇦</div><h3>السعودية</h3><p>المناهج السعودية</p></div>
-                <div class="gulf-card"><div class="flag">🇰🇼</div><h3>الكويت</h3><p>المناهج الكويتية</p></div>
-                <div class="gulf-card"><div class="flag">🇴🇲</div><h3>سلطنة عُمان</h3><p>المناهج العمانية</p></div>
-                <div class="gulf-card"><div class="flag">🇦🇪</div><h3>الإمارات</h3><p>المناهج الإماراتية</p></div>
-                <div class="gulf-card"><div class="flag">🇶🇦</div><h3>قطر</h3><p>المناهج القطريّة</p></div>
-            </div>
-        </div>
-    </section>
+    <!-- قسم المناهج والدول -->
+    <section id="curriculums" style="background: #F1F5F9;">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>نخدم طلابنا في دول الخليج</h2>
+                <p>مناهج معتمدة ومتوافقة تماماً مع معايير كل دولة</p>
+            </div>
+            <div class="gulf-grid">
+                <div class="gulf-card"><div class="flag">🇸🇦</div><h3>السعودية</h3><p>المناهج السعودية</p></div>
+                <div class="gulf-card"><div class="flag">🇰🇼</div><h3>الكويت</h3><p>المناهج الكويتية</p></div>
+                <div class="gulf-card"><div class="flag">🇴🇲</div><h3>سلطنة عُمان</h3><p>المناهج العمانية</p></div>
+                <div class="gulf-card"><div class="flag">🇦🇪</div><h3>الإمارات</h3><p>المناهج الإماراتية</p></div>
+                <div class="gulf-card"><div class="flag">🇶🇦</div><h3>قطر</h3><p>المناهج القطرية</p></div>
+            </div>
+        </div>
+    </section>
 
-    <!-- قسم الباقات وجداول الأسعار -->
-    <section id="pricing">
-        <div class="container reveal">
-            <div class="section-header">
-                <h2>باقات الحصص (أونلاين)</h2>
-                <p>جميع الباقات تشمل 8 حصص (مجموعات حد أقصى 3 طلاب أو فردية)</p>
-            </div>
-            <div class="pricing-grid">
-                <!-- السعودية -->
-                <div class="price-card">
-                    <div class="price-header"><h3>🇸🇦 السعودية</h3><span class="currency">ريال سعودي</span></div>
-                    <table class="price-table">
-                        <thead><tr><th>مجموعة</th><th>ابتدائي</th></tr></thead>
-                        <tbody><tr><td>300</td><td>40</td></tr><tr><td>320</td><td>45</td></tr><tr><td>350</td><td>50</td></tr></tbody>
-                    </table>
-                    <div class="price-note">الفردية: 40 ريال</div>
-                </div>
-                <!-- الكويت -->
-                <div class="price-card">
-                    <div class="price-header"><h3>🇰🇼 الكويت</h3><span class="currency">دينار كويتي</span></div>
-                    <table class="price-table">
-                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
-                        <tbody><tr><td>30</td><td>4</td></tr><tr><td>32</td><td>4.5</td></tr><tr><td>35</td><td>5</td></tr></tbody>
-                    </table>
-                    <div class="price-note">الفردية: 4 دينار</div>
-                </div>
-                <!-- عُمان -->
-                <div class="price-card">
-                    <div class="price-header"><h3>🇴🇲 سلطنة عُمان</h3><span class="currency">ريال عماني</span></div>
-                    <table class="price-table">
-                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
-                        <tbody><tr><td>45</td><td>4.5</td></tr><tr><td>50</td><td>5</td></tr><tr><td>55</td><td>5.5</td></tr></tbody>
-                    </table>
-                    <div class="price-note">الفردية: 4.5 ريال</div>
-                </div>
-                <!-- قطر -->
-                <div class="price-card">
-                    <div class="price-header"><h3>🇶🇦 قطر</h3><span class="currency">ريال قطري</span></div>
-                    <table class="price-table">
-                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
-                        <tbody><tr><td>340</td><td>45</td></tr><tr><td>360</td><td>50</td></tr><tr><td>390</td><td>55</td></tr></tbody>
-                    </table>
-                    <div class="price-note">الفردية: 45 ريال</div>
-                </div>
-                <!-- الإمارات -->
-                <div class="price-card">
-                    <div class="price-header"><h3>🇦🇪 الإمارات</h3><span class="currency">درهم إماراتي</span></div>
-                    <table class="price-table">
-                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
-                        <tbody><tr><td>340</td><td>45</td></tr><tr><td>360</td><td>50</td></tr><tr><td>390</td><td>55</td></tr></tbody>
-                    </table>
-                    <div class="price-note">الفردية: 45 درهم</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- قسم الباقات وجداول الأسعار -->
+    <section id="pricing">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>باقات الحصص (أونلاين)</h2>
+                <p>جميع الباقات تشمل 8 حصص (مجموعات حد أقصى 3 طلاب أو فردية)</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- السعودية -->
+                <div class="price-card">
+                    <div class="price-header"><h3>🇸🇦 السعودية</h3><span class="currency">ريال سعودي</span></div>
+                    <table class="price-table">
+                        <thead><tr><th>مجموعة</th><th>ابتدائي</th></tr></thead>
+                        <tbody><tr><td>300</td><td>40</td></tr><tr><td>320</td><td>45</td></tr><tr><td>350</td><td>50</td></tr></tbody>
+                    </table>
+                    <div class="price-note">الفردية: 40 ريال</div>
+                </div>
+                <!-- الكويت -->
+                <div class="price-card">
+                    <div class="price-header"><h3>🇰🇼 الكويت</h3><span class="currency">دينار كويتي</span></div>
+                    <table class="price-table">
+                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
+                        <tbody><tr><td>30</td><td>4</td></tr><tr><td>32</td><td>4.5</td></tr><tr><td>35</td><td>5</td></tr></tbody>
+                    </table>
+                    <div class="price-note">الفردية: 4 دينار</div>
+                </div>
+                <!-- عُمان -->
+                <div class="price-card">
+                    <div class="price-header"><h3>🇴🇲 سلطنة عُمان</h3><span class="currency">ريال عماني</span></div>
+                    <table class="price-table">
+                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
+                        <tbody><tr><td>45</td><td>4.5</td></tr><tr><td>50</td><td>5</td></tr><tr><td>55</td><td>5.5</td></tr></tbody>
+                    </table>
+                    <div class="price-note">الفردية: 4.5 ريال</div>
+                </div>
+                <!-- قطر -->
+                <div class="price-card">
+                    <div class="price-header"><h3>🇶🇦 قطر</h3><span class="currency">ريال قطري</span></div>
+                    <table class="price-table">
+                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
+                        <tbody><tr><td>340</td><td>45</td></tr><tr><td>360</td><td>50</td></tr><tr><td>390</td><td>55</td></tr></tbody>
+                    </table>
+                    <div class="price-note">الفردية: 45 ريال</div>
+                </div>
+                <!-- الإمارات -->
+                <div class="price-card">
+                    <div class="price-header"><h3>🇦🇪 الإمارات</h3><span class="currency">درهم إماراتي</span></div>
+                    <table class="price-table">
+                        <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
+                        <tbody><tr><td>340</td><td>45</td></tr><tr><td>360</td><td>50</td></tr><tr><td>390</td><td>55</td></tr></tbody>
+                    </table>
+                    <div class="price-note">الفردية: 45 درهم</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- لماذا نجود -->
-    <section id="why-us" style="background: #F1F5F9;">
-        <div class="container reveal">
-            <div class="section-header">
-                <h2>لماذا تختار منصة نجود؟</h2>
-                <p>ركائز تعليمية مبتكرة تضمن تفوق أطفالكم بثقة</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-item"><i class="fas fa-brain"></i><div><h4>التركيز على الفهم</h4><p>نبتعد عن الحفظ المباشر لنبني تفكيراً تحليلياً متكاملاً.</p></div></div>
-                <div class="feature-item"><i class="fas fa-laptop-code"></i><div><h4>تقنيات تفاعلية</h4><p>استخدام أحدث أساليب التعليم الرقمي لتشويق الطالب.</p></div></div>
-                <div class="feature-item"><i class="fas fa-chart-line"></i><div><h4>تقارير دورية</h4><p>متابعة تقييمية مستمرة لولي الأمر لملاحظة التطور.</p></div></div>
-                <div class="feature-item"><i class="fas fa-user-shield"></i><div><h4>بيئة آمنة ومريحة</h4><p>حصص أونلاين بيئتها محفزة ومريحة للطفل من المنزل.</p></div></div>
-            </div>
-        </div>
-    </section>
+    <!-- لماذا نجود -->
+    <section id="why-us" style="background: #F1F5F9;">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>لماذا تختار منصة نجود؟</h2>
+                <p>ركائز تعليمية مبتكرة تضمن تفوق أطفالكم بثقة</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item"><i class="fas fa-brain"></i><div><h4>التركيز على الفهم</h4><p>نبتعد عن الحفظ المباشر لنبني تفكيراً تحليلياً متكاملاً.</p></div></div>
+                <div class="feature-item"><i class="fas fa-laptop-code"></i><div><h4>تقنيات تفاعلية</h4><p>استخدام أحدث أساليب التعليم الرقمي لتشويق الطالب.</p></div></div>
+                <div class="feature-item"><i class="fas fa-chart-line"></i><div><h4>تقارير دورية</h4><p>متابعة تقييمية مستمرة لولي الأمر لملاحظة التطور.</p></div></div>
+                <div class="feature-item"><i class="fas fa-user-shield"></i><div><h4>بيئة آمنة ومريحة</h4><p>حصص أونلاين بيئتها محفزة ومريحة للطفل من المنزل.</p></div></div>
+            </div>
+        </div>
+    </section>
 
-    <!-- FAQ -->
-    <section id="faq">
-        <div class="container reveal">
-            <div class="section-header">
-                <h2>الأسئلة الشائعة</h2>
-                <p>إجابات لأهم الاستفسارات لدى أولياء الأمور</p>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">ما هي مدة صلاحية الباقة؟ <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">صلاحية جميع الباقات 8 أسابيع تبدأ من تاريخ أول حصة فعليّة.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">كم عدد الطلاب في المجموعات؟ <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">تتكون المجموعات من 2 إلى 3 طلاب كحد أقصى لضمان التركيز والمتابعة الفردية لكل طالب.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">كيف يتم تنظيم المواعيد؟ <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">يتم الاتفاق على المواعيد المناسبة لكل طالب أو مجموعة عبر التواصل المباشر معنا على الواتساب.</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2>الأسئلة الشائعة</h2>
+                <p>إجابات لأهم الاستفسارات لدى أولياء الأمور</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">ما هي مدة صلاحية الباقة؟ <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">صلاحية جميع الباقات 8 أسابيع تبدأ من تاريخ أول حصة فعليّة.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">كم عدد الطلاب في المجموعات؟ <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">تتكون المجموعات من 2 إلى 3 طلاب كحد أقصى لضمان التركيز والمتابعة الفردية لكل طالب.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">كيف يتم تنظيم المواعيد؟ <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">يتم الاتفاق على المواعيد المناسبة لكل طالب أو مجموعة عبر التواصل المباشر معنا على الواتساب.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">Njoud EDU</div>
-        <div class="footer-slogan">نجود .. حيث يبدأ الفهم ، ويصنع النجاح ✨</div>
-        <p class="footer-rights">جميع الحقوق محفوظة © 2026 | NjoudEdu.com</p>
-    </footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Njoud EDU</div>
+        <div class="footer-slogan">نجود .. حيث يبدأ الفهم ، ويصنع النجاح ✨</div>
+        <p class="footer-rights">جميع الحقوق محفوظة © 2026 | NjoudEdu.com</p>
+    </footer>
 
-    <!-- أزرار الواتساب والعودة للأعلى -->
-    <a href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
+    <!-- أزرار الواتساب والعودة للأعلى -->
+    <a href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
 
-    <!-- JavaScript للعداد والتأثيرات -->
-    <script>
-        // Scroll Reveal Effect
-        window.addEventListener('scroll', reveal);
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var revealTop = reveals[i].getBoundingClientRect().top;
-                var revealPoint = 150;
-                if (revealTop < windowHeight - revealPoint) {
-                    reveals[i].classList.add('active');
-                }
-            }
-        }
-        reveal(); // Run on initial load
+    <!-- JavaScript للعداد والتأثيرات -->
+    <script>
+        // Scroll Reveal Effect
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                var revealPoint = 150;
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        reveal(); // Run on initial load
 
-        // Stats Counter Animation
-        const counters = document.querySelectorAll('.counter');
-        let countStarted = false;
-        window.addEventListener('scroll', () => {
-            const statsSection = document.querySelector('.stats-section');
-            if (!statsSection) return;
-            const pos = statsSection.getBoundingClientRect().top;
-            if (pos < window.innerHeight && !countStarted) {
-                countStarted = true;
-                counters.forEach(counter => {
-                    const target = +counter.getAttribute('data-target');
-                    const updateCount = () => {
-                        const count = +counter.innerText;
-                        const inc = target / 40;
-                        if (count < target) {
-                            counter.innerText = Math.ceil(count + inc);
-                            setTimeout(updateCount, 40);
-                        } else {
-                            counter.innerText = target + (target === 100 ? '%' : '+');
-                        }
-                    };
-                    updateCount();
-                });
-            }
-        });
+        // Stats Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        let countStarted = false;
+        window.addEventListener('scroll', () => {
+            const statsSection = document.querySelector('.stats-section');
+            if (!statsSection) return;
+            const pos = statsSection.getBoundingClientRect().top;
+            if (pos < window.innerHeight && !countStarted) {
+                countStarted = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const updateCount = () => {
+                        const count = +counter.innerText;
+                        const inc = target / 40;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 40);
+                        } else {
+                            counter.innerText = target + (target === 100 ? '%' : '+');
+                        }
+                    };
+                    updateCount();
+                });
+            }
+        });
 
-        // FAQ Toggle
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
 
-        // Back to Top Button
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
