@@ -19,6 +19,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Twemoji Country Flags Support for Windows/Laptops -->
+    <style>
+        @font-face {
+            font-family: 'Twemoji Country Flags';
+            src: url('https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1.8/dist/TwemojiCountryFlags.woff2') format('woff2');
+            font-display: swap;
+        }
+    </style>
+
     <style>
         :root {
             --primary: #0B2545;
@@ -35,7 +44,7 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Twemoji Country Flags', 'Cairo', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
 
         /* CSS Logo Design */
@@ -175,7 +184,7 @@
             transition: var(--transition);
         }
         .gulf-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--accent); }
-        .gulf-card .flag { font-size: 40px; margin-bottom: 10px; }
+        .gulf-card .flag { font-size: 45px; margin-bottom: 10px; line-height: 1; display: inline-block; }
         .gulf-card h3 { font-size: 18px; color: var(--primary); font-weight: 700; }
         .gulf-card p { font-size: 13px; color: var(--text-muted); margin-top: 5px; }
 
@@ -192,7 +201,7 @@
         }
         .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
         .price-header { background: var(--primary); color: white; padding: 12px; border-radius: 14px; text-align: center; margin-bottom: 15px; }
-        .price-header h3 { font-size: 18px; font-weight: 700; }
+        .price-header h3 { font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; }
         .price-header .currency { font-size: 12px; color: var(--accent); }
         .price-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
         .price-table th, .price-table td { padding: 8px 4px; font-size: 14px; border: 1px solid #F1F5F9; text-align: center; }
@@ -366,7 +375,7 @@
             <div class="pricing-grid">
                 <!-- السعودية -->
                 <div class="price-card">
-                    <div class="price-header"><h3>🇸🇦 السعودية</h3><span class="currency">ريال سعودي</span></div>
+                    <div class="price-header"><h3><span class="flag">🇸🇦</span> السعودية</h3><span class="currency">ريال سعودي</span></div>
                     <table class="price-table">
                         <thead><tr><th>مجموعة</th><th>ابتدائي</th></tr></thead>
                         <tbody><tr><td>300</td><td>40</td></tr><tr><td>320</td><td>45</td></tr><tr><td>350</td><td>50</td></tr></tbody>
@@ -375,7 +384,7 @@
                 </div>
                 <!-- الكويت -->
                 <div class="price-card">
-                    <div class="price-header"><h3>🇰🇼 الكويت</h3><span class="currency">دينار كويتي</span></div>
+                    <div class="price-header"><h3><span class="flag">🇰🇼</span> الكويت</h3><span class="currency">دينار كويتي</span></div>
                     <table class="price-table">
                         <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
                         <tbody><tr><td>30</td><td>4</td></tr><tr><td>32</td><td>4.5</td></tr><tr><td>35</td><td>5</td></tr></tbody>
@@ -384,7 +393,7 @@
                 </div>
                 <!-- عُمان -->
                 <div class="price-card">
-                    <div class="price-header"><h3>🇴🇲 سلطنة عُمان</h3><span class="currency">ريال عماني</span></div>
+                    <div class="price-header"><h3><span class="flag">🇴🇲</span> سلطنة عُمان</h3><span class="currency">ريال عماني</span></div>
                     <table class="price-table">
                         <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
                         <tbody><tr><td>45</td><td>4.5</td></tr><tr><td>50</td><td>5</td></tr><tr><td>55</td><td>5.5</td></tr></tbody>
@@ -393,7 +402,7 @@
                 </div>
                 <!-- قطر -->
                 <div class="price-card">
-                    <div class="price-header"><h3>🇶🇦 قطر</h3><span class="currency">ريال قطري</span></div>
+                    <div class="price-header"><h3><span class="flag">🇶🇦</span> قطر</h3><span class="currency">ريال قطري</span></div>
                     <table class="price-table">
                         <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
                         <tbody><tr><td>340</td><td>45</td></tr><tr><td>360</td><td>50</td></tr><tr><td>390</td><td>55</td></tr></tbody>
@@ -402,7 +411,7 @@
                 </div>
                 <!-- الإمارات -->
                 <div class="price-card">
-                    <div class="price-header"><h3>🇦🇪 الإمارات</h3><span class="currency">درهم إماراتي</span></div>
+                    <div class="price-header"><h3><span class="flag">🇦🇪</span> الإمارات</h3><span class="currency">درهم إماراتي</span></div>
                     <table class="price-table">
                         <thead><tr><th>مجموعة</th><th>فردية</th></tr></thead>
                         <tbody><tr><td>340</td><td>45</td></tr><tr><td>360</td><td>50</td></tr><tr><td>390</td><td>55</td></tr></tbody>
@@ -481,7 +490,7 @@
                 }
             }
         }
-        reveal(); // Run on initial load
+        reveal();
 
         // Stats Counter Animation
         const counters = document.querySelectorAll('.counter');
