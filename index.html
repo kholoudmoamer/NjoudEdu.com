@@ -10,8 +10,12 @@
     <meta name="keywords" content="دروس خصوصية, رياضيات, علوم, فيزياء, برمجة, STEM, السعودية, الكويت, قطر, الإمارات, عمان">
     <meta property="og:title" content="منصة نجود التعليمية | Njoud EDU">
     <meta property="og:description" content="تعلم بذكاء .. تميز بثقة. دروس أونلاين تفاعلية لمناهج دول الخليج.">
+    <meta property="og:image" content="logo.png">
     <meta property="og:url" content="https://njoudedu.com">
     <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
 
     <!-- Fonts: Cairo & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,20 +42,6 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
 
-        /* CSS Logo Design */
-        .logo-badge {
-            background: var(--primary);
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 800;
-            position: relative;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
         /* Navbar ثابت احترافي */
         .navbar {
             position: fixed;
@@ -68,7 +58,7 @@
         }
 
         .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo .logo-badge { width: 46px; height: 46px; font-size: 22px; }
+        .nav-logo img { width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; }
         .nav-logo span { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 0.5px; }
 
         .nav-links { display: flex; gap: 25px; list-style: none; }
@@ -89,8 +79,7 @@
         .hero {
             position: relative;
             padding: 160px 5% 100px;
-            background: linear-gradient(135deg, rgba(7, 25, 48, 0.92) 0%, rgba(11, 37, 69, 0.88) 100%), 
-                        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            background: radial-gradient(circle at top right, #133863 0%, var(--primary-dark) 100%);
             color: white;
             text-align: center;
             overflow: hidden;
@@ -98,13 +87,15 @@
 
         .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
         .hero-avatar { 
-            width: 120px; 
-            height: 120px; 
-            font-size: 60px; 
-            border-width: 4px; 
+            width: 130px; 
+            height: 130px; 
+            border-radius: 50%;
+            border: 4px solid var(--accent); 
             margin: 0 auto 20px; 
             box-shadow: var(--shadow-lg); 
             animation: pulse 3s infinite; 
+            object-fit: cover;
+            background: var(--primary);
         }
         
         .hero h1 { font-size: 46px; font-weight: 900; margin-bottom: 15px; line-height: 1.2; }
@@ -279,7 +270,7 @@
     <!-- Navbar ثابت -->
     <nav class="navbar">
         <a href="#" class="nav-logo">
-            <div class="logo-badge">N</div>
+            <img src="logo.png" alt="Njoud EDU Logo">
             <span>Njoud EDU</span>
         </a>
         <ul class="nav-links">
@@ -295,7 +286,7 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <div class="logo-badge hero-avatar">N</div>
+            <img src="logo.png" alt="Njoud Logo" class="hero-avatar">
             <h1>منصة نجود التعليمية</h1>
             <div class="slogan">تعلم بذكاء .. تميز بثقة</div>
             <p>دروس خصوصية أونلاين تفاعلية فائقة الجودة في الرياضيات والعلوم والفيزياء والبرمجة وSTEM لمناهج دول الخليج.</p>
