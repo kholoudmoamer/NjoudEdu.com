@@ -58,7 +58,12 @@
         }
 
         .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo img { width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; }
+        .nav-logo img { 
+            height: 45px; 
+            width: auto; 
+            object-fit: contain; 
+            border-radius: 0;
+        }
         .nav-logo span { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 0.5px; }
 
         .nav-links { display: flex; gap: 25px; list-style: none; }
@@ -87,15 +92,12 @@
 
         .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
         .hero-avatar { 
-            width: 130px; 
-            height: 130px; 
-            border-radius: 50%;
-            border: 4px solid var(--accent); 
+            max-width: 260px; 
+            width: 100%;
+            height: auto; 
             margin: 0 auto 20px; 
-            box-shadow: var(--shadow-lg); 
-            animation: pulse 3s infinite; 
-            object-fit: cover;
-            background: var(--primary);
+            object-fit: contain;
+            display: block;
         }
         
         .hero h1 { font-size: 46px; font-weight: 900; margin-bottom: 15px; line-height: 1.2; }
@@ -250,8 +252,6 @@
         }
         .back-to-top.show { opacity: 1; pointer-events: auto; }
 
-        /* Keyframes Animations */
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
@@ -472,7 +472,7 @@
                 }
             }
         }
-        reveal(); // Run on initial load
+        reveal();
 
         // Stats Counter Animation
         const counters = document.querySelectorAll('.counter');
