@@ -6,12 +6,11 @@
     
     <!-- SEO & Open Graph Meta Tags -->
     <title>منصة نجود التعليمية | Njoud EDU</title>
-    <meta name="description" content="منصة نجود التعليمية لتقديم دروس خصوصية أونلاين بجودة عالية في الرياضيات والعلوم والفيزياء والبرمجة وSTEM لدول الخليج.">
+    <meta name="description" content="نجود منصة تعليمية متخصصة في تدريس الرياضيات والعلوم والفيزياء والبرمجة للمناهج الخليجية، بأسلوب يركز على الفهم، وتنمية التفكير، وبناء الثقة لدى الطالب من خلال حصص تفاعلية ومتابعة مستمرة.">
     <meta name="keywords" content="دروس خصوصية, رياضيات, علوم, فيزياء, برمجة, STEM, السعودية, الكويت, قطر, الإمارات, عمان">
     <meta property="og:title" content="منصة نجود التعليمية | Njoud EDU">
     <meta property="og:description" content="تعلم بذكاء .. تميز بثقة. دروس أونلاين تفاعلية لمناهج دول الخليج.">
     <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="https://njoudedu.com">
     <meta property="og:type" content="website">
 
     <!-- Favicon -->
@@ -46,7 +45,7 @@
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
-            background: rgba(11, 37, 69, 0.95);
+            background: rgba(11, 37, 69, 0.96);
             backdrop-filter: blur(10px);
             padding: 12px 5%;
             display: flex;
@@ -58,12 +57,7 @@
         }
 
         .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo img { 
-            height: 45px; 
-            width: auto; 
-            object-fit: contain; 
-            border-radius: 0;
-        }
+        .nav-logo img { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover; }
         .nav-logo span { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 0.5px; }
 
         .nav-links { display: flex; gap: 25px; list-style: none; }
@@ -80,29 +74,37 @@
         }
         .nav-btn:hover { background: #fff; transform: translateY(-2px); }
 
-        /* Hero Section */
+        /* Hero Section معدل لاستخدام الغلاف البانورامي الجديد */
         .hero {
             position: relative;
-            padding: 160px 5% 100px;
-            background: radial-gradient(circle at top right, #133863 0%, var(--primary-dark) 100%);
+            padding: 180px 5% 120px;
+            /* تم تعديل الخلفية لاستخدام الصورة البانورامية الجديدة مع تراكب لوني خفيف لوضوح النص */
+            background: radial-gradient(circle at top right, rgba(19, 56, 99, 0.3) 0%, rgba(7, 25, 48, 0.5) 100%), 
+                        url('hero-panoramic.png') center/cover no-repeat;
             color: white;
             text-align: center;
             overflow: hidden;
         }
 
         .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+        
+        /* تنسيق الشعار الدائري ليكون بارزاً ومنفصلاً فوق الغلاف */
         .hero-avatar { 
-            max-width: 260px; 
-            width: 100%;
-            height: auto; 
-            margin: 0 auto 20px; 
-            object-fit: contain;
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            border: 5px solid var(--accent); 
+            margin: 0 auto 30px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+            animation: pulse 3s infinite;
+            object-fit: cover;
+            background: white; /* خلفية بيضاء للشعار ليفصل عن الغلاف */
             display: block;
         }
         
-        .hero h1 { font-size: 46px; font-weight: 900; margin-bottom: 15px; line-height: 1.2; }
-        .hero .slogan { font-size: 24px; color: var(--accent); font-weight: 700; margin-bottom: 20px; }
-        .hero p { font-size: 18px; opacity: 0.9; max-width: 750px; margin: 0 auto 35px; font-weight: 400; }
+        .hero h1 { font-size: 48px; font-weight: 900; margin-bottom: 12px; line-height: 1.2; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hero .slogan { font-size: 26px; color: var(--accent); font-weight: 700; margin-bottom: 25px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 19px; opacity: 0.95; max-width: 800px; margin: 0 auto 40px; font-weight: 500; line-height: 1.8; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
 
         .hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn-primary { background: var(--accent); color: var(--primary-dark); padding: 14px 35px; border-radius: 50px; font-weight: 800; font-size: 18px; text-decoration: none; transition: var(--transition); box-shadow: 0 5px 20px rgba(238, 164, 143, 0.4); }
@@ -252,6 +254,8 @@
         }
         .back-to-top.show { opacity: 1; pointer-events: auto; }
 
+        /* Keyframes Animations */
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
@@ -262,6 +266,7 @@
             .hero .slogan { font-size: 18px; }
             .stats-section { grid-template-columns: repeat(2, 1fr); margin-top: -20px; }
             .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+            .hero-avatar { width: 120px; height: 120px; }
         }
     </style>
 </head>
@@ -286,10 +291,11 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
+            <!-- الشعار الدائري الحقيقي مرفوع هنا -->
             <img src="logo.png" alt="Njoud Logo" class="hero-avatar">
             <h1>منصة نجود التعليمية</h1>
             <div class="slogan">تعلم بذكاء .. تميز بثقة</div>
-            <p>دروس خصوصية أونلاين تفاعلية فائقة الجودة في الرياضيات والعلوم والفيزياء والبرمجة وSTEM لمناهج دول الخليج.</p>
+            <p>نجود منصة تعليمية متخصصة في تدريس الرياضيات والعلوم والفيزياء والبرمجة للمناهج الخليجية، بأسلوب يركز على الفهم، وتنمية التفكير، وبناء الثقة لدى الطالب من خلال حصص تفاعلية ومتابعة مستمرة.</p>
             <div class="hero-btns">
                 <a href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود،%20أود%20الاستفسار%20عن%20تفاصيل%20الحجز" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> احجز أولى حصصك الآن</a>
                 <a href="#pricing" class="btn-secondary">استعرض الباقات</a>
@@ -342,7 +348,7 @@
                 <div class="gulf-card"><div class="flag">🇰🇼</div><h3>الكويت</h3><p>المناهج الكويتية</p></div>
                 <div class="gulf-card"><div class="flag">🇴🇲</div><h3>سلطنة عُمان</h3><p>المناهج العمانية</p></div>
                 <div class="gulf-card"><div class="flag">🇦🇪</div><h3>الإمارات</h3><p>المناهج الإماراتية</p></div>
-                <div class="gulf-card"><div class="flag">🇶🇦</div><h3>قطر</h3><p>المناهج القطرية</p></div>
+                <div class="gulf-card"><div class="flag">🇶🇦</div><h3>قطر</h3><p>المناهج القطريّة</p></div>
             </div>
         </div>
     </section>
@@ -472,7 +478,7 @@
                 }
             }
         }
-        reveal();
+        reveal(); // Run on initial load
 
         // Stats Counter Animation
         const counters = document.querySelectorAll('.counter');
