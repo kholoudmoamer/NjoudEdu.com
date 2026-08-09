@@ -24,12 +24,6 @@
     <meta property="og:url" content="https://njoudedu.com">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="منصة نجود التعليمية | Njoud EDU">
-    <meta name="twitter:description" content="نجود... حيث يبدأ التميز بالفهم. حصص أونلاين تفاعلية للمناهج الخليجية والجامعية.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80">
-
     <!-- Fonts: Cairo & Font Awesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -216,15 +210,44 @@
 
         /* Gulf Countries */
         .gulf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
-        .gulf-card { background: var(--card-bg); padding: 25px 15px; border-radius: 18px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid #E2E8F0; transition: var(--transition); }
+        .gulf-card { background: var(--card-bg); padding: 25px 15px; border-radius: 18px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid #E2E8F0; transition: var(--transition); cursor: pointer; }
         .gulf-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--accent); }
         .gulf-card .flag { font-size: 45px; margin-bottom: 10px; line-height: 1; display: inline-block; }
         .gulf-card h3 { font-size: 18px; color: var(--primary); font-weight: 700; }
         .gulf-card p { font-size: 13px; color: var(--text-muted); margin-top: 5px; }
 
-        /* ====================================================== */
-        /* تصميم نظام التبويبات والتسعير المتدرج المبتكر (مثل منصة معلمي) */
-        /* ====================================================== */
+        /* Currency Switcher Component */
+        .currency-switcher-container {
+            background: #fff;
+            padding: 20px 25px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 30px;
+            border: 2px solid var(--accent);
+            text-align: center;
+        }
+        .currency-title { font-weight: 800; color: var(--primary); margin-bottom: 15px; font-size: 18px; }
+        .currency-btns { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .currency-btn {
+            background: var(--bg-light);
+            border: 1.5px solid #CBD5E1;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .currency-btn:hover, .currency-btn.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        /* Tabs Nav */
         .tabs-nav {
             display: flex;
             justify-content: center;
@@ -261,7 +284,7 @@
         .tab-content { display: none; }
         .tab-content.active { display: block; animation: fadeIn 0.5s ease-in-out; }
 
-        /* كروت تسعير المواد داخل المرحلة */
+        /* Pricing Cards Grid */
         .pricing-cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -376,7 +399,7 @@
 </head>
 <body>
 
-    <!-- Navbar ثابت -->
+    <!-- Navbar -->
     <nav class="navbar">
         <a href="#" class="nav-logo">
             <div class="logo-badge">N</div>
@@ -396,7 +419,7 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <div class="logo-badge"><img src="logo.png"/></div>
+            <div class="logo-badge hero-avatar">N</div>
             <h1>منصة نجود التعليمية</h1>
             <div class="slogan">نجود... حيث يبدأ التميز بالفهم.</div>
             <p>دروس خصوصية أونلاين تفاعلية فائقة الجودة في الرياضيات والعلوم والفيزياء والكيمياء والأحياء والبرمجة وSTEM ومناهج IG والجامعات.</p>
@@ -407,7 +430,7 @@
         </div>
     </header>
 
-    <!-- عداد الأرقام (Stats Counter) -->
+    <!-- Stats Counter Section -->
     <div class="stats-section reveal">
         <div class="stat-item">
             <h3 class="counter" data-target="100">0</h3>
@@ -423,7 +446,7 @@
         </div>
     </div>
 
-    <!-- قسم عن نجود الرئيسي -->
+    <!-- About Section -->
     <section id="about">
         <div class="container reveal">
             <div class="about-section">
@@ -434,16 +457,16 @@
                     </p>
                     <div class="special-offer-badge">
                         <div class="offer-title">
-                            <i class="fas fa-gift"></i> عروض وتخفيضات خاصة
+                            <i class="fas fa-gift"></i> أسعار وتخفيضات خاصة
                         </div>
-                        <p>عرض خاص ومميز على باقات الـ 16 حصة والـ 24 حصة ✨</p>
+                        <p>) عرض خاص ومميز على باقات الـ 16 حصة والـ 24 حصة  🎉</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم المواد -->
+    <!-- Subjects Section -->
     <section id="subjects">
         <div class="container reveal">
             <div class="section-header">
@@ -464,31 +487,41 @@
         </div>
     </section>
 
-    <!-- قسم المناهج والدول -->
+    <!-- Curriculums Section -->
     <section id="curriculums" style="background: #F1F5F9;">
         <div class="container reveal">
             <div class="section-header">
                 <h2>نخدم طلابنا في دول الخليج</h2>
-                <p>مناهج معتمدة ومتوافقة تماماً مع معايير كل دولة</p>
+                <p>مناهج معتمدة ومتوافقة تماماً مع معايير كل دولة (اضغط على دولتك لعرض أسعارها)</p>
             </div>
             <div class="gulf-grid">
-                <div class="gulf-card"><div class="flag">🇸🇦</div><h3>السعودية</h3><p>المناهج السعودية</p></div>
-                <div class="gulf-card"><div class="flag">🇰🇼</div><h3>الكويت</h3><p>المناهج الكويتية</p></div>
-                <div class="gulf-card"><div class="flag">🇴🇲</div><h3>سلطنة عُمان</h3><p>المناهج العمانية</p></div>
-                <div class="gulf-card"><div class="flag">🇦🇪</div><h3>الإمارات</h3><p>المناهج الإماراتية</p></div>
-                <div class="gulf-card"><div class="flag">🇶🇦</div><h3>قطر</h3><p>المناهج القطرية</p></div>
+                <div class="gulf-card" onclick="selectCountry('SA')"><div class="flag">🇸🇦</div><h3>السعودية</h3><p>المناهج السعودية</p></div>
+                <div class="gulf-card" onclick="selectCountry('KW')"><div class="flag">🇰🇼</div><h3>الكويت</h3><p>المناهج الكويتية</p></div>
+                <div class="gulf-card" onclick="selectCountry('OM')"><div class="flag">🇴🇲</div><h3>سلطنة عُمان</h3><p>المناهج العمانية</p></div>
+                <div class="gulf-card" onclick="selectCountry('AE')"><div class="flag">🇦🇪</div><h3>الإمارات</h3><p>المناهج الإماراتية</p></div>
+                <div class="gulf-card" onclick="selectCountry('QA')"><div class="flag">🇶🇦</div><h3>قطر</h3><p>المناهج القطرية</p></div>
             </div>
         </div>
     </section>
 
-    <!-- ====================================================== -->
-    <!-- قسم الباقات والتسعيرات المتدرجة المبتكر (نظام منصة معلمي) -->
-    <!-- ====================================================== -->
+    <!-- Pricing Section -->
     <section id="pricing">
         <div class="container reveal">
             <div class="section-header">
                 <h2>اختر الباقة والمرحلة الدراسية</h2>
-                <p>تدرج في الأسعار حسب صعوبة المرحلة والمتطلبات الأكاديمية (تسعير بالريال السعودي)</p>
+                <p>تدرج في الأسعار حسب المرحلة ونوع الباقة (فردية أو مجموعات تفاعلية صغيرة)</p>
+            </div>
+
+            <!-- محوّل العملات للدول -->
+            <div class="currency-switcher-container">
+                <div class="currency-title"><i class="fas fa-coins"></i> اختر عملة ودولة الطالب لعرض الأسعار:</div>
+                <div class="currency-btns">
+                    <button class="currency-btn active" data-country="SA" onclick="selectCountry('SA')">🇸🇦 السعودية (ر.س)</button>
+                    <button class="currency-btn" data-country="KW" onclick="selectCountry('KW')">🇰🇼 الكويت (د.ك)</button>
+                    <button class="currency-btn" data-country="OM" onclick="selectCountry('OM')">🇴🇲 عُمان (ر.ع)</button>
+                    <button class="currency-btn" data-country="AE" onclick="selectCountry('AE')">🇦🇪 الإمارات (د.إ)</button>
+                    <button class="currency-btn" data-country="QA" onclick="selectCountry('QA')">🇶🇦 قطر (ر.ق)</button>
+                </div>
             </div>
 
             <!-- أزرار اختيار المرحلة (Tabs Nav) -->
@@ -509,47 +542,47 @@
                             <p>تأسيس ومتابعة دروس لمرة واحدة</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">40</span> <span class="unit">ر.س / للحصة</span>
+                            <span class="amount" data-pricing="p-single">40</span> <span class="unit currency-unit">ر.س / للحصة</span>
                         </div>
                         <ul class="price-details-list">
                             <li><i class="fas fa-check-circle"></i> مدة الحصة 60 دقيقة</li>
                             <li><i class="fas fa-check-circle"></i> شرح ومتابعة للدروس اليومية</li>
                             <li><i class="fas fa-check-circle"></i> حل الواجبات المدرسية</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20حجز%20حصة%20مستعجلة%20للمرحلة%20الابتدائية" class="btn-select-package">احجز الآن</a>
+                        <a href="#" data-pkg="حصة فردية مستعجلة - ابتدائي" class="btn-select-package btn-booking">احجز الآن</a>
                     </div>
 
                     <div class="level-pricing-card featured">
-                        <div class="featured-badge">الأكثر طلباً</div>
+                        <div class="featured-badge">توفير للطلبة (الأكثر طلباً)</div>
                         <div class="card-title-wrap">
                             <h3>باقة 8 حصص (مجموعة)</h3>
-                            <p>شاملة للرياضيات والعلوم</p>
+                            <p>مجموعة صغيرة (2 إلى 3 طلاب)</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">300</span> <span class="unit">ر.س / للباقة</span>
+                            <span class="amount" data-pricing="p-group">290</span> <span class="unit currency-unit">ر.س / للطالب</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> 8 حصص شهرياً (3 طلاب كحد أقصى)</li>
+                            <li><i class="fas fa-check-circle"></i> 8 حصص شهرياً لمجموعة تفاعلية</li>
                             <li><i class="fas fa-check-circle"></i> صلاحية الباقة 8 أسابيع</li>
                             <li><i class="fas fa-check-circle"></i> تقارير متابعة دورية لولي الأمر</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20الاشتراك%20في%20باقة%208%20حصص%20للمرحلة%20الابتدائية" class="btn-select-package">اشترك الآن</a>
+                        <a href="#" data-pkg="باقة 8 حصص مجموعة - ابتدائي" class="btn-select-package btn-booking">اشترك الآن</a>
                     </div>
 
                     <div class="level-pricing-card">
                         <div class="card-title-wrap">
                             <h3>باقة 8 حصص (فردية)</h3>
-                            <p>تركيز كامل وتأسيس فردي</p>
+                            <p>تركيز كامل وتأسيس فردي (1:1)</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">320</span> <span class="unit">ر.س / للباقة</span>
+                            <span class="amount" data-pricing="p-indiv">320</span> <span class="unit currency-unit">ر.س / للباقة</span>
                         </div>
                         <ul class="price-details-list">
                             <li><i class="fas fa-check-circle"></i> 8 حصص فردية (طالب لمعلم)</li>
                             <li><i class="fas fa-check-circle"></i> جدول مرن وتحديد للمواعيد</li>
                             <li><i class="fas fa-check-circle"></i> إعداد ومراجعة للاختبارات</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20الاشتراك%20في%20باقة%20الحصص%20الفردية%20للمرحلة%20الابتدائية" class="btn-select-package">اشترك الآن</a>
+                        <a href="#" data-pkg="باقة 8 حصص فردية - ابتدائي" class="btn-select-package btn-booking">اشترك الآن</a>
                     </div>
                 </div>
             </div>
@@ -559,51 +592,48 @@
                 <div class="pricing-cards-grid">
                     <div class="level-pricing-card">
                         <div class="card-title-wrap">
-                            <h3>حصة فردية</h3>
+                            <h3>حصة فردية مستعجلة</h3>
                             <p>مراجعة وحل مسائل قبل الاختبارات</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">45</span> <span class="unit">ر.س / للحصة</span>
+                            <span class="amount" data-pricing="m-single">45</span> <span class="unit currency-unit">ر.س / للحصة</span>
                         </div>
                         <ul class="price-details-list">
                             <li><i class="fas fa-check-circle"></i> مدة الحصة 60 دقيقة</li>
-                            <li><i class="fas fa-check-circle"></i> شرح رياضيات / علوم / انجليزي</li>
-                            <li><i class="fas fa-check-circle"></i> تدريب مكثف على المسائل</li>
+                            <li><i class="fas fa-check-circle"></i> تركيز على النقاط الصعبة</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20حجز%20حصة%20مستعجلة%20للمرحلة%20المتوسطة" class="btn-select-package">احجز الآن</a>
+                        <a href="#" data-pkg="حصة فردية - متوسط" class="btn-select-package btn-booking">احجز الآن</a>
                     </div>
 
                     <div class="level-pricing-card featured">
-                        <div class="featured-badge">الأكثر شعبية</div>
+                        <div class="featured-badge">الأكثر إقبالاً</div>
                         <div class="card-title-wrap">
                             <h3>باقة 8 حصص (مجموعة)</h3>
-                            <p>متابعة وتجهيز للاختبارات</p>
+                            <p>تفاعلي ضمن مجموعة (2 إلى 3 طلاب)</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">320</span> <span class="unit">ر.س / للباقة</span>
+                            <span class="amount" data-pricing="m-group">300</span> <span class="unit currency-unit">ر.س / للطالب</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> 8 حصص (مجموعات صغيرة تفاعلية)</li>
-                            <li><i class="fas fa-check-circle"></i> حل تجميعات واختبارات سابقة</li>
-                            <li><i class="fas fa-check-circle"></i> متابعة أسبوعية دقيقة</li>
+                            <li><i class="fas fa-check-circle"></i> 8 حصص شهرياً</li>
+                            <li><i class="fas fa-check-circle"></i> متابعة الواجبات والاختبارات</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20الاشتراك%20في%20باقة%20المرحلة%20المتوسطة" class="btn-select-package">اشترك الآن</a>
+                        <a href="#" data-pkg="باقة 8 حصص مجموعة - متوسط" class="btn-select-package btn-booking">اشترك الآن</a>
                     </div>
 
                     <div class="level-pricing-card">
                         <div class="card-title-wrap">
                             <h3>باقة 8 حصص (فردية)</h3>
-                            <p>تفوق أكاديمي ومتابعة خاصة</p>
+                            <p>شرح خاص ودروس تفاعلية 1:1</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">350</span> <span class="unit">ر.س / للباقة</span>
+                            <span class="amount" data-pricing="m-indiv">350</span> <span class="unit currency-unit">ر.س / للباقة</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> 8 حصص فردية خاصة</li>
-                            <li><i class="fas fa-check-circle"></i> شرح مخصص وتغطية جميع الثغرات</li>
-                            <li><i class="fas fa-check-circle"></i> مرونة كاملة في إعادة الجدولة</li>
+                            <li><i class="fas fa-check-circle"></i> 8 حصص فردية</li>
+                            <li><i class="fas fa-check-circle"></i> جدول خاص بالكامل</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20الاشتراك%20في%20باقة%20الفردي%20المتوسط" class="btn-select-package">اشترك الآن</a>
+                        <a href="#" data-pkg="باقة 8 حصص فردية - متوسط" class="btn-select-package btn-booking">اشترك الآن</a>
                     </div>
                 </div>
             </div>
@@ -613,159 +643,150 @@
                 <div class="pricing-cards-grid">
                     <div class="level-pricing-card">
                         <div class="card-title-wrap">
-                            <h3>حصة فردية</h3>
-                            <p>فيزياء / كيمياء / أحياء / رياضيات</p>
+                            <h3>حصة فردية مستعجلة</h3>
+                            <p>مراجعة ليلة الامتحان والفيزياء/الرياضيات</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">50</span> <span class="unit">ر.س / للحصة</span>
+                            <span class="amount" data-pricing="h-single">50</span> <span class="unit currency-unit">ر.س / للحصة</span>
                         </div>
                         <ul class="price-details-list">
                             <li><i class="fas fa-check-circle"></i> مدة الحصة 60 دقيقة</li>
-                            <li><i class="fas fa-check-circle"></i> تبسيط القوانين والمسائل المعقدة</li>
-                            <li><i class="fas fa-check-circle"></i> تدريب على أنماط الأشكال والرسومات</li>
+                            <li><i class="fas fa-check-circle"></i> حل أسئلة وتدريبات متقدمة</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20حجز%20حصة%20للمرحلة%20الثانوية" class="btn-select-package">احجز الآن</a>
+                        <a href="#" data-pkg="حصة فردية - ثانوي" class="btn-select-package btn-booking">احجز الآن</a>
                     </div>
 
                     <div class="level-pricing-card featured">
-                        <div class="featured-badge">باقة التميز</div>
+                        <div class="featured-badge">الأكثر طلباً</div>
                         <div class="card-title-wrap">
                             <h3>باقة 8 حصص (مجموعة)</h3>
-                            <p>شرح متكامل للمفاهيم والتجارب</p>
+                            <p>مجموعة تفاعلية (2 إلى 3 طلاب)</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">350</span> <span class="unit">ر.س / للباقة</span>
+                            <span class="amount" data-pricing="h-group">350</span> <span class="unit currency-unit">ر.س / للطالب</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> 8 حصص تفاعلية متقدمة</li>
-                            <li><i class="fas fa-check-circle"></i> أوراق عمل وتدريبات مستمرة</li>
-                            <li><i class="fas fa-check-circle"></i> ملخصات شاملة للدروس</li>
+                            <li><i class="fas fa-check-circle"></i> 8 حصص شهرياً</li>
+                            <li><i class="fas fa-check-circle"></i> بنك أسئلة واختبارات تجريبية</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20الاشتراك%20في%20باقة%20الثانوي%20مجموعة" class="btn-select-package">اشترك الآن</a>
+                        <a href="#" data-pkg="باقة 8 حصص مجموعة - ثانوي" class="btn-select-package btn-booking">اشترك الآن</a>
                     </div>
 
                     <div class="level-pricing-card">
                         <div class="card-title-wrap">
                             <h3>باقة 8 حصص (فردية)</h3>
-                            <p>إعداد مكثف للدرجات النهائية</p>
+                            <p>تفوق وأعلى درجات المتابعة الخاصة</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">390</span> <span class="unit">ر.س / للباقة</span>
+                            <span class="amount" data-pricing="h-indiv">400</span> <span class="unit currency-unit">ر.س / للباقة</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> 8 حصص مع معلمين متخصصين جداً</li>
-                            <li><i class="fas fa-check-circle"></i> خطة مخصصة وفقاً لمنهج الطالب</li>
-                            <li><i class="fas fa-check-circle"></i> متابعة ومساعدة بالبحوث والواجبات</li>
+                            <li><i class="fas fa-check-circle"></i> 8 حصص فردية مكثفة</li>
+                            <li><i class="fas fa-check-circle"></i> تغطية لكافة المواد والدعم الكامل</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20الاشتراك%20في%20باقة%20الثانوي%20فردي" class="btn-select-package">اشترك الآن</a>
+                        <a href="#" data-pkg="باقة 8 حصص فردية - ثانوي" class="btn-select-package btn-booking">اشترك الآن</a>
                     </div>
                 </div>
             </div>
 
-            <!-- محتوى المناهج الدولية (IGCSE / IB) -->
+            <!-- محتوى IG -->
             <div id="tab-international" class="tab-content">
                 <div class="pricing-cards-grid">
                     <div class="level-pricing-card">
                         <div class="card-title-wrap">
                             <h3>حصة فردية IG</h3>
-                            <p>O-Level / A-Level / IB</p>
+                            <p>IGCSE / O-Level / AS-Level</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">70</span> <span class="unit">ر.س / للحصة</span>
+                            <span class="amount" data-pricing="ig-single">60</span> <span class="unit currency-unit">ر.س / للحصة</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> مدة الحصة 60 دقيقة</li>
-                            <li><i class="fas fa-check-circle"></i> معلمون متمرسون بـ Past Papers</li>
-                            <li><i class="fas fa-check-circle"></i> لغة تدريس إنجليزية / عربية</li>
+                            <li><i class="fas fa-check-circle"></i> Past Papers & Exam Techniques</li>
+                            <li><i class="fas fa-check-circle"></i> شرح باللغة الإنجليزية/العربية</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20استفسار%20عن%20دروس%20IGCSE" class="btn-select-package">احجز الآن</a>
+                        <a href="#" data-pkg="حصة فردية - IG" class="btn-select-package btn-booking">احجز الآن</a>
                     </div>
 
                     <div class="level-pricing-card featured">
-                        <div class="featured-badge">باقة المتفوقين</div>
+                        <div class="featured-badge">توفير المناهج الدولية</div>
                         <div class="card-title-wrap">
-                            <h3>باقة 8 حصص IG (مجموعة)</h3>
-                            <p>الفيزياء / الكيمياء / Math</p>
+                            <h3>باقة 8 حصص (مجموعة IG)</h3>
+                            <p>مجموعة صغيرة تفاعلية</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">480</span> <span class="unit">ر.س / للباقة</span>
+                            <span class="amount" data-pricing="ig-group">420</span> <span class="unit currency-unit">ر.س / للطالب</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> 8 حصص في مجموعات 3 طلاب</li>
-                            <li><i class="fas fa-check-circle"></i> حل اسئلة الامتحانات الماضية (Past Papers)</li>
-                            <li><i class="fas fa-check-circle"></i> إتقان استراتيجيات الإجابة الدقيقة</li>
+                            <li><i class="fas fa-check-circle"></i> 8 حصص متخصصة</li>
+                            <li><i class="fas fa-check-circle"></i> حل امتحانات السنوات السابقة</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20الاشتراك%20في%20باقة%20IG%20مجموعة" class="btn-select-package">اشترك الآن</a>
+                        <a href="#" data-pkg="باقة 8 حصص مجموعة - IG" class="btn-select-package btn-booking">اشترك الآن</a>
                     </div>
 
                     <div class="level-pricing-card">
                         <div class="card-title-wrap">
-                            <h3>باقة 8 حصص IG (فردية)</h3>
-                            <p>تدريب مكثف للغاية لدرجة A*</p>
+                            <h3>باقة 8 حصص (فردية IG)</h3>
+                            <p>متابعة فردية مكثفة للمهام المتقدمة</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">550</span> <span class="unit">ر.س / للباقة</span>
+                            <span class="amount" data-pricing="ig-indiv">480</span> <span class="unit currency-unit">ر.س / للباقة</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> 8 حصص فردية خاصة لمناهج كامبريدج وإدكسل</li>
-                            <li><i class="fas fa-check-circle"></i> تركيز متكامل على نقاط الضعف</li>
-                            <li><i class="fas fa-check-circle"></i> متابعة مستمرة حتى الامتحانات الرسمية</li>
+                            <li><i class="fas fa-check-circle"></i> 8 حصص فردية خاصة</li>
+                            <li><i class="fas fa-check-circle"></i> تركيز على معايير التقييم والـ Syllabus</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20الاشتراك%20في%20باقة%20IG%20فردية" class="btn-select-package">اشترك الآن</a>
+                        <a href="#" data-pkg="باقة 8 حصص فردية - IG" class="btn-select-package btn-booking">اشترك الآن</a>
                     </div>
                 </div>
             </div>
 
-            <!-- محتوى المرحلة الجامعية (التسعير الأعلى) -->
+            <!-- محتوى المرحلة الجامعية -->
             <div id="tab-university" class="tab-content">
                 <div class="pricing-cards-grid">
                     <div class="level-pricing-card">
                         <div class="card-title-wrap">
                             <h3>حصة جامعية فردية</h3>
-                            <p>تفاضل / حساب تكامل / فيزياء جامعية / كيمياء</p>
+                            <p>شرح المواد والتخصصات المتقدمة</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">90</span> <span class="unit">ر.س / للحصة</span>
+                            <span class="amount" data-pricing="u-single">70</span> <span class="unit currency-unit">ر.س / للحصة</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> مدة الحصة 60 دقيقة مع محاضر متخصص</li>
-                            <li><i class="fas fa-check-circle"></i> حل الشيتات والسلايدات والواجبات</li>
-                            <li><i class="fas fa-check-circle"></i> شرح مفاهيم الهندسة والعلوم المتقدمة</li>
+                            <li><i class="fas fa-check-circle"></i> فيزياء / رياضيات / كيمياء / برمجة جامعية</li>
+                            <li><i class="fas fa-check-circle"></i> حل الشيتات والواجبات الجامعية</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20حجز%20حصة%20جامعية%20فردية" class="btn-select-package">احجز الآن</a>
+                        <a href="#" data-pkg="حصة فردية - جامعي" class="btn-select-package btn-booking">احجز الآن</a>
                     </div>
 
                     <div class="level-pricing-card featured">
-                        <div class="featured-badge">الأعلى طلباً للجامعات</div>
+                        <div class="featured-badge">باقة التميز الجامعي</div>
                         <div class="card-title-wrap">
                             <h3>باقة 8 حصص جامعية (مجموعة)</h3>
-                            <p>شرح المواد والتجهيز للميدتيرم والفاينل</p>
+                            <p>متابعة كاملة لمجموعة طلاب</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">600</span> <span class="unit">ر.س / للباقة</span>
+                            <span class="amount" data-pricing="u-group">450</span> <span class="unit currency-unit">ر.س / للطالب</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> 8 حصص في مجموعات صغيرة لطلاب الجامعة</li>
-                            <li><i class="fas fa-check-circle"></i> مراجعات شاملة لأسئلة الأعوام السابقة</li>
-                            <li><i class="fas fa-check-circle"></i> شرح البرمجة (Python, C++, Java) والمواد العلمية</li>
+                            <li><i class="fas fa-check-circle"></i> 8 حصص لشرح المادة الجامعية كاملة</li>
+                            <li><i class="fas fa-check-circle"></i> الإعداد للميدترم والفاينل</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20الاشتراك%20في%20باقة%20الجامعة%20مجموعة" class="btn-select-package">اشترك الآن</a>
+                        <a href="#" data-pkg="باقة 8 حصص مجموعة - جامعي" class="btn-select-package btn-booking">اشترك الآن</a>
                     </div>
 
                     <div class="level-pricing-card">
                         <div class="card-title-wrap">
-                            <h3>باقة 8 حصص جامعية (فردية)</h3>
-                            <p>شرح مخصص وفق سلايدات الجامعة</p>
+                            <h3>باقة 8 حصص (جامعية فردية)</h3>
+                            <p>متابعة 1:1 خاصة ومكثفة</p>
                         </div>
                         <div class="price-box">
-                            <span class="amount">700</span> <span class="unit">ر.س / للباقة</span>
+                            <span class="amount" data-pricing="u-indiv">520</span> <span class="unit currency-unit">ر.س / للباقة</span>
                         </div>
                         <ul class="price-details-list">
-                            <li><i class="fas fa-check-circle"></i> 8 حصص فردية خاصة وفق منهجامعة الطالب</li>
-                            <li><i class="fas fa-check-circle"></i> شرح مواد الهندسة والعلوم والبرمجة بالكامل</li>
-                            <li><i class="fas fa-check-circle"></i> مرونة تامة في تحديد أوقات المحاضرات</li>
+                            <li><i class="fas fa-check-circle"></i> 8 حصص خاصة للتخصصات الدقيقة</li>
+                            <li><i class="fas fa-check-circle"></i> دعم كامل في المشاريع والامتحانات</li>
                         </ul>
-                        <a href="https://wa.me/201039353583?text=أريد%20الاشتراك%20في%20باقة%20الجامعة%20الفردية" class="btn-select-package">اشترك الآن</a>
+                        <a href="#" data-pkg="باقة 8 حصص فردية - جامعي" class="btn-select-package btn-booking">اشترك الآن</a>
                     </div>
                 </div>
             </div>
@@ -773,49 +794,69 @@
         </div>
     </section>
 
-    <!-- لماذا نجود -->
-    <section id="why-us" style="background: #F1F5F9;">
+    <!-- Why Us Section -->
+    <section id="why-us" style="background: #ffffff;">
         <div class="container reveal">
             <div class="section-header">
                 <h2>لماذا تختار منصة نجود؟</h2>
-                <p>ركائز تعليمية مبتكرة تضمن تفوق أطفالكم بثقة</p>
+                <p>مميزات تجعلنا الخيار الأول لطلاب وأولياء أمور دول الخليج</p>
             </div>
             <div class="features-grid">
-                <div class="feature-item"><i class="fas fa-brain"></i><div><h4>التركيز على الفهم</h4><p>نبتعد عن الحفظ المباشر لنبني تفكيراً تحليلياً متكاملاً.</p></div></div>
-                <div class="feature-item"><i class="fas fa-laptop-code"></i><div><h4>تقنيات تفاعلية</h4><p>استخدام أحدث أساليب التعليم الرقمي لتشويق الطالب.</p></div></div>
-                <div class="feature-item"><i class="fas fa-chart-line"></i><div><h4>تقارير دورية</h4><p>متابعة تقييمية مستمرة لولي الأمر لملاحظة التطور.</p></div></div>
-                <div class="feature-item"><i class="fas fa-user-shield"></i><div><h4>بيئة آمنة ومريحة</h4><p>حصص أونلاين بيئتها محفزة ومريحة للطفل من المنزل.</p></div></div>
+                <div class="feature-item">
+                    <i class="fas fa-award"></i>
+                    <div>
+                        <h4>معلمات وكوادر متخصصة</h4>
+                        <p>نخبة من المعلمات والمتخصصين الخبرة في تبسيط المفاهيم العلمية والمعادلات.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-laptop-house"></i>
+                    <div>
+                        <h4>بيئة تعليمية تفاعلية</h4>
+                        <p>استخدام أدوات رقمية وشاشات تفاعلية تجعل الحصة ممتعة وبعيدة عن التلقين التقليدي.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>مرونة عالية في المواعيد</h4>
+                        <p>جدولة الحصص بما يناسب وقت الطالب ورغبة ولي الأمر بسهولة تامة.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <h4>تقارير متابعة مستمرة</h4>
+                        <p>إطلاع ولي الأمر أولاً بأول على مستوى الطالب ومدى تطوره وحضوره.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ الشامل المطور -->
-    <section id="faq">
+    <!-- FAQ Section -->
+    <section id="faq" style="background: #F1F5F9;">
         <div class="container reveal">
             <div class="section-header">
                 <h2>الأسئلة الشائعة</h2>
-                <p>إجابات لأهم الاستفسارات لدى أولياء الأمور والطلاب</p>
+                <p>إجابات لأهم الاستفسارات التي تهم أولياء الأمور والطلاب</p>
             </div>
             <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">هل الحصص فردية؟ <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">نعم، نوفر حصصاً فردية (طالب مع معلم) للتركيز التام، كما نوفر خيار المجموعات الصغيرة جداً (من 2 إلى 3 طلاب كحد أقصى) لمن يرغب في ذلك.</div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">كيف يتم تقديم الحصص؟ <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">تُقدم الحصص أونلاين عبر منصات بث تفاعلية مباشرة (مثل Zoom) باستخدام سبورات وشاشات ذكية لضمان أعلى مستوى من التفاعل والتوضيح.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">هل يوجد واجبات ومتابعة؟ <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">بالتأكيد! يتم إعطاء واجبات واختبارات قصيرة دورية لتثبيت المعلومة، مع إرسال تقارير متابعة مستمرة لولي الأمر.</div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">كم عدد الطلاب في باقات المجموعات؟ <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">مجموعاتنا صغيـرة ومحـدودة وتتكون من 2 إلى 3 طلاب فقط لضمان التركيز والاهتمام الفردي بالجميع.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">كيف يتم الدفع؟ <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">يتم الدفع بطرق إلكترونية سهلة وآمنة تناسب كل دولة من دول الخليج (تحويل بنكي / بوابات دفع إلكترونية)، ويتم تزويدكم بالتفاصيل فور الحجز.</div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">ما هي مدة صلاحية الباقة المكونة من 8 حصص؟ <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">تتمتع الباقة بصلاحية مرنة تصل إلى 8 أسابيع لمنح الطالب الأريحية الكافية في توزيع حصصه.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">هل يمكن تغيير موعد الحصة؟ <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">نعم، يمكن إعادة جدولة الحصة وتغيير الموعد بمرونة عند إبلاغنا قبل موعد الحصة بوقت كافٍ لاتخاذ الترتيبات المناسبة.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">ما هي مدة صلاحية الباقة؟ <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">صلاحية جميع الباقات 8 أسابيع تبدأ من تاريخ أول حصة فعليّة.</div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">ما هي طرق الدفع المتاحة؟ <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">نوفر طرق دفع سهلة وآمنة تناسب كل دولة من دول الخليج العربي.</div>
                 </div>
             </div>
         </div>
@@ -824,112 +865,230 @@
     <!-- Footer -->
     <footer>
         <div class="footer-logo">Njoud EDU</div>
-        <div class="footer-slogan">نجود... حيث يبدأ التميز بالفهم. ✨</div>
+        <div class="footer-slogan">منصة نجود التعليمية... حيث يبدأ التميز بالفهم</div>
         
         <div class="social-links">
-            <a href="mailto:Njoudedu1@gmail.com" class="social-btn" title="البريد الإلكتروني"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.facebook.com/people/Njoud-Edu/pfbid0cPSGYibRWDNbisv1RCwdEm8CiwV5zWiwmqfAWXcCF8NBxD5eLZfhbECUVRUXpW2Cl/" target="_blank" class="social-btn" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.tiktok.com/@njoudedu" target="_blank" class="social-btn" title="تيك توك"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/njoudedu1/" target="_blank" class="social-btn" title="انستجرام"><i class="fab fa-instagram"></i></a>
-            
-            <a href="https://x.com/NjoudEdu" target="_blank" class="social-btn" title="منصة X">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                </svg>
-            </a>
-
-            <a href="#" target="_blank" class="social-btn" title="تليجرام"><i class="fab fa-telegram-plane"></i></a>
-            <a href="#" target="_blank" class="social-btn" title="سناب شات"><i class="fab fa-snapchat"></i></a>
+            <a href="https://wa.me/201039353583" target="_blank" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         </div>
 
-        <p class="footer-rights">جميع الحقوق محفوظة © 2026 | NjoudEdu.com</p>
+        <div class="footer-rights">
+            جميع الحقوق محفوظة © 2026 منصة نجود التعليمية (Njoud EDU)
+        </div>
     </footer>
 
-    <!-- أزرار ثابتة -->
-    <a href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/201039353583?text=مرحباً%20منصة%20نجود،%20أريد%20الاستفسار%20عن%20الحصص" class="whatsapp-float" target="_blank" title="تواصل معنا عبر الواتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
 
-    <!-- JavaScript -->
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Scripts Scripting Section -->
     <script>
-        // Tab Navigation Functionality (نظام التبويبات مثل منصة معلمي)
+        // قاعدة بيانات الأسعار والعملات المحدثة بالكامل
+        const countryData = {
+            'SA': {
+                name: 'السعودية',
+                unit: 'ر.س / للباقة',
+                unitGroup: 'ر.س / للطالب',
+                unitSingle: 'ر.س / للحصة',
+                rates: {
+                    'p-single': 40, 'p-group': 290, 'p-indiv': 320,
+                    'm-single': 45, 'm-group': 300, 'm-indiv': 350,
+                    'h-single': 50, 'h-group': 350, 'h-indiv': 400,
+                    'ig-single': 60, 'ig-group': 420, 'ig-indiv': 480,
+                    'u-single': 70, 'u-group': 450, 'u-indiv': 520
+                }
+            },
+            'KW': {
+                name: 'الكويت',
+                unit: 'د.ك / للباقة',
+                unitGroup: 'د.ك / للطالب',
+                unitSingle: 'د.ك / للحصة',
+                rates: {
+                    'p-single': 3.5, 'p-group': 23, 'p-indiv': 26,
+                    'm-single': 4, 'm-group': 24, 'm-indiv': 28,
+                    'h-single': 4.5, 'h-group': 28, 'h-indiv': 32,
+                    'ig-single': 5, 'ig-group': 34, 'ig-indiv': 39,
+                    'u-single': 6, 'u-group': 36, 'u-indiv': 42
+                }
+            },
+            'OM': {
+                name: 'عُمان',
+                unit: 'ر.ع / للباقة',
+                unitGroup: 'ر.ع / للطالب',
+                unitSingle: 'ر.ع / للحصة',
+                rates: {
+                    'p-single': 4, 'p-group': 29, 'p-indiv': 32,
+                    'm-single': 4.5, 'm-group': 30, 'm-indiv': 35,
+                    'h-single': 5, 'h-group': 35, 'h-indiv': 40,
+                    'ig-single': 6, 'ig-group': 42, 'ig-indiv': 48,
+                    'u-single': 7, 'u-group': 45, 'u-indiv': 52
+                }
+            },
+            'AE': {
+                name: 'الإمارات',
+                unit: 'د.إ / للباقة',
+                unitGroup: 'د.إ / للطالب',
+                unitSingle: 'د.إ / للحصة',
+                rates: {
+                    'p-single': 40, 'p-group': 290, 'p-indiv': 320,
+                    'm-single': 45, 'm-group': 300, 'm-indiv': 350,
+                    'h-single': 50, 'h-group': 350, 'h-indiv': 400,
+                    'ig-single': 60, 'ig-group': 420, 'ig-indiv': 480,
+                    'u-single': 70, 'u-group': 450, 'u-indiv': 520
+                }
+            },
+            'QA': {
+                name: 'قطر',
+                unit: 'ر.ق / للباقة',
+                unitGroup: 'ر.ق / للطالب',
+                unitSingle: 'ر.ق / للحصة',
+                rates: {
+                    'p-single': 40, 'p-group': 290, 'p-indiv': 320,
+                    'm-single': 45, 'm-group': 300, 'm-indiv': 350,
+                    'h-single': 50, 'h-group': 350, 'h-indiv': 400,
+                    'ig-single': 60, 'ig-group': 420, 'ig-indiv': 480,
+                    'u-single': 70, 'u-group': 450, 'u-indiv': 520
+                }
+            }
+        };
+
+        let currentCountry = 'SA';
+
+        // دالة تغيير الدولة والعملة
+        function selectCountry(code) {
+            currentCountry = code;
+            const data = countryData[code];
+
+            // تحديث حالة أزرار العملات
+            document.querySelectorAll('.currency-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-country') === code);
+            });
+
+            // تحديث المبالغ في الكروت
+            document.querySelectorAll('.amount[data-pricing]').forEach(el => {
+                const key = el.getAttribute('data-pricing');
+                if (data.rates[key]) {
+                    el.innerText = data.rates[key];
+                }
+            });
+
+            // تحديث نصوص العملة (للباقة، المجموعة، أو الحصة)
+            document.querySelectorAll('.currency-unit').forEach(el => {
+                const key = el.previousElementSibling ? el.previousElementSibling.getAttribute('data-pricing') : '';
+                if (key.includes('single')) {
+                    el.innerText = data.unitSingle;
+                } else if (key.includes('group')) {
+                    el.innerText = data.unitGroup;
+                } else {
+                    el.innerText = data.unit;
+                }
+            });
+
+            // تحديث روابط الواتساب
+            updateBookingLinks();
+        }
+
+        // تحديث روابط الواتساب ديناميكياً مع بيانات الباقة والعملة
+        function updateBookingLinks() {
+            const data = countryData[currentCountry];
+            document.querySelectorAll('.btn-booking').forEach(btn => {
+                const pkgName = btn.getAttribute('data-pkg');
+                const priceEl = btn.parentElement.querySelector('.amount');
+                const price = priceEl ? priceEl.innerText : '';
+                const currency = data.unitSingle.split('/')[0].trim();
+                
+                const text = `مرحباً منصة نجود، أريد الاشتراك في (${pkgName}) - بسعر ${price} ${currency} (دولة ${data.name})`;
+                btn.href = `https://wa.me/201039353583?text=${encodeURIComponent(text)}`;
+                btn.target = "_blank";
+            });
+        }
+
+        // دالة التبديل بين التبويبات (Tabs)
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
-            
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].classList.remove("active");
             }
-
             tablinks = document.getElementsByClassName("tab-btn");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].classList.remove("active");
             }
-
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
 
-        // Scroll Reveal Effect
-        window.addEventListener('scroll', reveal);
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
+        // دالة الأسئلة الشائعة
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
+        // زر العودة للأعلى
+        window.onscroll = function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+            revealOnScroll();
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // انيميشن الظهور عند السكرول
+        function revealOnScroll() {
+            var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
-                var revealTop = reveals[i].getBoundingClientRect().top;
-                var revealPoint = 150;
-                if (revealTop < windowHeight - revealPoint) {
-                    reveals[i].classList.add('active');
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
                 }
             }
         }
-        reveal();
 
-        // Stats Counter
-        const counters = document.querySelectorAll('.counter');
+        // العداد التصاعدي
         let countStarted = false;
         window.addEventListener('scroll', () => {
             const statsSection = document.querySelector('.stats-section');
-            if (!statsSection) return;
-            const pos = statsSection.getBoundingClientRect().top;
-            if (pos < window.innerHeight && !countStarted) {
-                countStarted = true;
-                counters.forEach(counter => {
-                    const target = +counter.getAttribute('data-target');
-                    const updateCount = () => {
-                        const count = +counter.innerText;
-                        const inc = target / 40;
-                        if (count < target) {
-                            counter.innerText = Math.ceil(count + inc);
-                            setTimeout(updateCount, 40);
-                        } else {
-                            counter.innerText = target + (target === 100 ? '%' : '+');
-                        }
-                    };
-                    updateCount();
-                });
+            if (statsSection && !countStarted) {
+                const pos = statsSection.getBoundingClientRect().top;
+                if (pos < window.innerHeight) {
+                    document.querySelectorAll('.counter').forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        let count = 0;
+                        const inc = target / 50;
+                        const updateCount = () => {
+                            count += inc;
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count);
+                                setTimeout(updateCount, 30);
+                            } else {
+                                counter.innerText = target + (target === 100 ? '%' : '+');
+                            }
+                        };
+                        updateCount();
+                    });
+                    countStarted = true;
+                }
             }
         });
 
-        // FAQ Toggle
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-
-        // Back to Top Button
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        // تشغيل البداية عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            selectCountry('SA');
+            revealOnScroll();
         });
     </script>
 </body>
