@@ -69,7 +69,18 @@
             color: #fff;
             font-weight: 800;
             position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Logo image fills the circle; slight upscale trims the white margin around the mark */
+        .logo-badge img {
+            width: 107%;
+            height: 107%;
+            object-fit: cover;
+            flex-shrink: 0;
+            display: block;
         }
 
         /* Navbar */
@@ -402,7 +413,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <a href="#" class="nav-logo">
-            <div class="logo-badge">N</div>
+            <div class="logo-badge"><img src="logo.png" alt="شعار نجود"></div>
             <span>Njoud EDU</span>
         </a>
         <ul class="nav-links">
@@ -419,7 +430,7 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <div class="logo-badge hero-avatar">N</div>
+            <div class="logo-badge hero-avatar"><img src="logo.png" alt="شعار منصة نجود التعليمية"></div>
             <h1>منصة نجود التعليمية</h1>
             <div class="slogan">نجود... حيث يبدأ التميز بالفهم.</div>
             <p>دروس خصوصية أونلاين تفاعلية فائقة الجودة في الرياضيات والعلوم والفيزياء والكيمياء والأحياء والبرمجة وSTEM ومناهج IG والجامعات.</p>
