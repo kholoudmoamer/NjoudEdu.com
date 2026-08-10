@@ -880,9 +880,13 @@
         
         <div class="social-links">
             <a href="https://wa.me/201039353583" target="_blank" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+           <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://x.com/NjoudEdu" target="_blank" class="social-btn" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.tiktok.com/@njoudedu" target="_blank" class="social-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/njoudedu1/" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61591197014670" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
         </div>
 
         <div class="footer-rights">
