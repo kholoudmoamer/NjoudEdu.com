@@ -511,6 +511,7 @@
                 <div class="gulf-card" onclick="selectCountry('OM')"><div class="flag">🇴🇲</div><h3>سلطنة عُمان</h3><p>المناهج العمانية</p></div>
                 <div class="gulf-card" onclick="selectCountry('AE')"><div class="flag">🇦🇪</div><h3>الإمارات</h3><p>المناهج الإماراتية</p></div>
                 <div class="gulf-card" onclick="selectCountry('QA')"><div class="flag">🇶🇦</div><h3>قطر</h3><p>المناهج القطرية</p></div>
+                <div class="gulf-card" onclick="selectCountry('BH')"><div class="flag">🇧🇭</div><h3>البحرين</h3><p>المناهج البحرينية</p></div>
             </div>
         </div>
     </section>
@@ -532,6 +533,7 @@
                     <button class="currency-btn" data-country="OM" onclick="selectCountry('OM')">🇴🇲 عُمان (ر.ع)</button>
                     <button class="currency-btn" data-country="AE" onclick="selectCountry('AE')">🇦🇪 الإمارات (د.إ)</button>
                     <button class="currency-btn" data-country="QA" onclick="selectCountry('QA')">🇶🇦 قطر (ر.ق)</button>
+                    <button class="currency-btn" data-country="BH" onclick="selectCountry('BH')">🇧🇭 البحرين (د.ب)</button>
                 </div>
             </div>
 
@@ -971,8 +973,21 @@
                     'ig-single': 60, 'ig-group': 420, 'ig-indiv': 480,
                     'u-single': 70, 'u-group': 450, 'u-indiv': 520
                 }
+            },
+            'BH': {
+                name: 'البحرين',
+                unit: 'د.ب / للباقة',
+                unitGroup: 'د.ب / للطالب',
+                unitSingle: 'د.ب / للحصة',
+                rates: {
+                    'p-single': 2.5, 'p-group': 17.5, 'p-indiv': 20,
+                    'm-single': 3, 'm-group': 19, 'm-indiv': 24,
+                    'h-single': 3.5, 'h-group': 23, 'h-indiv': 28,
+                    'ig-single': 4.5, 'ig-group': 29, 'ig-indiv': 36,
+                    'u-single': 5, 'u-group': 30, 'u-indiv': 40
+                }
             }
-        };
+            };
 
         let currentCountry = 'SA';
 
